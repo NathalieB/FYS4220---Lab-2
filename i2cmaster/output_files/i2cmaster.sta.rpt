@@ -1,0 +1,1885 @@
+TimeQuest Timing Analyzer report for i2cmaster
+Wed Oct 09 15:58:43 2013
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'state.sACK1_777'
+ 12. Slow Model Setup: 'clk'
+ 13. Slow Model Setup: 'ena'
+ 14. Slow Model Hold: 'state.sACK1_777'
+ 15. Slow Model Hold: 'ena'
+ 16. Slow Model Hold: 'clk'
+ 17. Slow Model Minimum Pulse Width: 'clk'
+ 18. Slow Model Minimum Pulse Width: 'ena'
+ 19. Slow Model Minimum Pulse Width: 'state.sACK1_777'
+ 20. Setup Times
+ 21. Hold Times
+ 22. Clock to Output Times
+ 23. Minimum Clock to Output Times
+ 24. Fast Model Setup Summary
+ 25. Fast Model Hold Summary
+ 26. Fast Model Recovery Summary
+ 27. Fast Model Removal Summary
+ 28. Fast Model Minimum Pulse Width Summary
+ 29. Fast Model Setup: 'state.sACK1_777'
+ 30. Fast Model Setup: 'clk'
+ 31. Fast Model Setup: 'ena'
+ 32. Fast Model Hold: 'ena'
+ 33. Fast Model Hold: 'state.sACK1_777'
+ 34. Fast Model Hold: 'clk'
+ 35. Fast Model Minimum Pulse Width: 'clk'
+ 36. Fast Model Minimum Pulse Width: 'ena'
+ 37. Fast Model Minimum Pulse Width: 'state.sACK1_777'
+ 38. Setup Times
+ 39. Hold Times
+ 40. Clock to Output Times
+ 41. Minimum Clock to Output Times
+ 42. Multicorner Timing Analysis Summary
+ 43. Setup Times
+ 44. Hold Times
+ 45. Clock to Output Times
+ 46. Minimum Clock to Output Times
+ 47. Setup Transfers
+ 48. Hold Transfers
+ 49. Report TCCS
+ 50. Report RSKM
+ 51. Unconstrained Paths
+ 52. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; i2cmaster                                                         ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C70F896C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                           ;
++-----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------+
+; Clock Name      ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets             ;
++-----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------+
+; clk             ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }             ;
+; ena             ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { ena }             ;
+; state.sACK1_777 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { state.sACK1_777 } ;
++-----------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------------------+
+
+
++-------------------------------------------------------+
+; Slow Model Fmax Summary                               ;
++------------+-----------------+-----------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name      ; Note ;
++------------+-----------------+-----------------+------+
+; 76.24 MHz  ; 76.24 MHz       ; state.sACK1_777 ;      ;
+; 175.69 MHz ; 175.69 MHz      ; clk             ;      ;
+; 262.54 MHz ; 262.54 MHz      ; ena             ;      ;
++------------+-----------------+-----------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------------+
+; Slow Model Setup Summary                 ;
++-----------------+--------+---------------+
+; Clock           ; Slack  ; End Point TNS ;
++-----------------+--------+---------------+
+; state.sACK1_777 ; -6.058 ; -24.478       ;
+; clk             ; -4.692 ; -75.630       ;
+; ena             ; -2.988 ; -14.555       ;
++-----------------+--------+---------------+
+
+
++------------------------------------------+
+; Slow Model Hold Summary                  ;
++-----------------+--------+---------------+
+; Clock           ; Slack  ; End Point TNS ;
++-----------------+--------+---------------+
+; state.sACK1_777 ; -1.547 ; -6.066        ;
+; ena             ; -1.368 ; -5.350        ;
+; clk             ; 0.524  ; 0.000         ;
++-----------------+--------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++------------------------------------------+
+; Slow Model Minimum Pulse Width Summary   ;
++-----------------+--------+---------------+
+; Clock           ; Slack  ; End Point TNS ;
++-----------------+--------+---------------+
+; clk             ; -1.380 ; -34.380       ;
+; ena             ; -1.222 ; -1.222        ;
+; state.sACK1_777 ; 0.500  ; 0.000         ;
++-----------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'state.sACK1_777'                                                                                       ;
++--------+------------------+------------------+-----------------+-----------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node          ; Launch Clock    ; Latch Clock     ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------------+-----------------+-----------------+--------------+------------+------------+
+; -6.058 ; state.sACK2_753  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -3.615     ; 1.942      ;
+; -6.006 ; state.sACK2_753  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -3.614     ; 1.922      ;
+; -5.879 ; state.sACK2_753  ; bit_count[1]     ; ena             ; state.sACK1_777 ; 0.500        ; -3.436     ; 1.942      ;
+; -5.827 ; state.sACK2_753  ; bit_count[2]     ; ena             ; state.sACK1_777 ; 0.500        ; -3.435     ; 1.922      ;
+; -5.804 ; state.sMACK_633  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -3.615     ; 1.688      ;
+; -5.756 ; state.sSTART_801 ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -3.736     ; 1.519      ;
+; -5.752 ; state.sMACK_633  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -3.614     ; 1.668      ;
+; -5.747 ; state.sSTOP_609  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -3.708     ; 1.538      ;
+; -5.704 ; state.sSTART_801 ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -3.735     ; 1.499      ;
+; -5.695 ; state.sSTOP_609  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -3.707     ; 1.518      ;
+; -5.625 ; state.sMACK_633  ; bit_count[1]     ; ena             ; state.sACK1_777 ; 0.500        ; -3.436     ; 1.688      ;
+; -5.577 ; state.sSTART_801 ; bit_count[1]     ; ena             ; state.sACK1_777 ; 0.500        ; -3.557     ; 1.519      ;
+; -5.573 ; state.sMACK_633  ; bit_count[2]     ; ena             ; state.sACK1_777 ; 0.500        ; -3.435     ; 1.668      ;
+; -5.568 ; state.sSTOP_609  ; bit_count[1]     ; ena             ; state.sACK1_777 ; 0.500        ; -3.529     ; 1.538      ;
+; -5.525 ; state.sSTART_801 ; bit_count[2]     ; ena             ; state.sACK1_777 ; 0.500        ; -3.556     ; 1.499      ;
+; -5.516 ; state.sSTOP_609  ; bit_count[2]     ; ena             ; state.sACK1_777 ; 0.500        ; -3.528     ; 1.518      ;
+; -3.918 ; state.sIDLE_729  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -1.328     ; 2.089      ;
+; -3.866 ; state.sIDLE_729  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -1.327     ; 2.069      ;
+; -3.739 ; state.sIDLE_729  ; bit_count[1]     ; ena             ; state.sACK1_777 ; 0.500        ; -1.149     ; 2.089      ;
+; -3.687 ; state.sIDLE_729  ; bit_count[2]     ; ena             ; state.sACK1_777 ; 0.500        ; -1.148     ; 2.069      ;
+; -2.809 ; state.sSTOP_609  ; state.sIDLE_729  ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; -2.380     ; 0.431      ;
+; -2.630 ; state.sSTOP_609  ; state.sIDLE_729  ; ena             ; state.sACK1_777 ; 1.000        ; -2.201     ; 0.431      ;
+; -1.799 ; state.sACK2_753  ; state.sSTART_801 ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.121      ; 1.956      ;
+; -1.795 ; state.sACK2_753  ; state.sSTOP_609  ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.093      ; 1.912      ;
+; -1.758 ; state.sACK2_753  ; state.sWRITE_705 ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.120      ; 1.918      ;
+; -1.620 ; state.sACK2_753  ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 1.000        ; 0.300      ; 1.956      ;
+; -1.616 ; state.sACK2_753  ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; 1.000        ; 0.272      ; 1.912      ;
+; -1.579 ; state.sACK2_753  ; state.sWRITE_705 ; ena             ; state.sACK1_777 ; 1.000        ; 0.299      ; 1.918      ;
+; -1.534 ; state.sMACK_633  ; state.sSTART_801 ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.121      ; 1.691      ;
+; -1.525 ; state.sMACK_633  ; state.sSTOP_609  ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.093      ; 1.642      ;
+; -1.500 ; state.sMACK_633  ; state.sREAD_681  ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.121      ; 1.667      ;
+; -1.355 ; state.sMACK_633  ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 1.000        ; 0.300      ; 1.691      ;
+; -1.346 ; state.sMACK_633  ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; 1.000        ; 0.272      ; 1.642      ;
+; -1.321 ; state.sMACK_633  ; state.sREAD_681  ; ena             ; state.sACK1_777 ; 1.000        ; 0.300      ; 1.667      ;
+; -1.140 ; bit_count[1]     ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.000      ; 1.139      ;
+; -1.122 ; state.sWRITE_705 ; state.sACK2_753  ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; -0.120     ; 1.116      ;
+; -1.108 ; state.sREAD_681  ; state.sMACK_633  ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; -0.121     ; 1.107      ;
+; -1.081 ; bit_count[1]     ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.001      ; 1.112      ;
+; -1.052 ; bit_count[2]     ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.000      ; 1.082      ;
+; -0.943 ; state.sWRITE_705 ; state.sACK2_753  ; ena             ; state.sACK1_777 ; 1.000        ; 0.059      ; 1.116      ;
+; -0.929 ; state.sREAD_681  ; state.sMACK_633  ; ena             ; state.sACK1_777 ; 1.000        ; 0.058      ; 1.107      ;
+; -0.788 ; state.sACK1_777  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; 1.501      ; 1.788      ;
+; -0.736 ; state.sACK1_777  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; 1.502      ; 1.768      ;
+; -0.523 ; state.sSTART_801 ; state.sADDR_657  ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; -0.150     ; 0.549      ;
+; -0.344 ; state.sSTART_801 ; state.sADDR_657  ; ena             ; state.sACK1_777 ; 1.000        ; 0.029      ; 0.549      ;
+; -0.288 ; state.sACK1_777  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 1.501      ; 1.788      ;
+; -0.236 ; state.sACK1_777  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 1.502      ; 1.768      ;
+; 0.312  ; state_ena        ; state.sSTOP_609  ; clk             ; state.sACK1_777 ; 0.500        ; 2.303      ; 1.515      ;
+; 0.338  ; state_ena        ; state.sSTART_801 ; clk             ; state.sACK1_777 ; 0.500        ; 2.331      ; 1.529      ;
+; 0.350  ; state_ena        ; state.sWRITE_705 ; clk             ; state.sACK1_777 ; 0.500        ; 2.330      ; 1.520      ;
+; 0.368  ; state_ena        ; state.sREAD_681  ; clk             ; state.sACK1_777 ; 0.500        ; 2.331      ; 1.509      ;
+; 1.001  ; ena              ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 0.500        ; 5.237      ; 3.772      ;
+; 1.038  ; ena              ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; 0.500        ; 5.209      ; 3.695      ;
+; 1.080  ; ena              ; state.sWRITE_705 ; ena             ; state.sACK1_777 ; 0.500        ; 5.236      ; 3.696      ;
+; 1.093  ; ena              ; state.sREAD_681  ; ena             ; state.sACK1_777 ; 0.500        ; 5.237      ; 3.690      ;
+; 1.185  ; state.sIDLE_729  ; state.sSTART_801 ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 2.408      ; 1.259      ;
+; 1.364  ; state.sIDLE_729  ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 1.000        ; 2.587      ; 1.259      ;
+; 1.501  ; ena              ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 1.000        ; 5.237      ; 3.772      ;
+; 1.538  ; ena              ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; 1.000        ; 5.209      ; 3.695      ;
+; 1.580  ; ena              ; state.sWRITE_705 ; ena             ; state.sACK1_777 ; 1.000        ; 5.236      ; 3.696      ;
+; 1.593  ; ena              ; state.sREAD_681  ; ena             ; state.sACK1_777 ; 1.000        ; 5.237      ; 3.690      ;
++--------+------------------+------------------+-----------------+-----------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                     ;
++--------+-----------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; -4.692 ; \clk_proc:counter[2]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.728      ;
+; -4.692 ; \clk_proc:counter[2]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.728      ;
+; -4.692 ; \clk_proc:counter[2]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.728      ;
+; -4.691 ; \clk_proc:counter[2]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.727      ;
+; -4.689 ; \clk_proc:counter[2]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.725      ;
+; -4.656 ; \clk_proc:counter[2]  ; state_ena            ; clk          ; clk         ; 1.000        ; 0.059      ; 5.751      ;
+; -4.654 ; \clk_proc:counter[0]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.687      ;
+; -4.654 ; \clk_proc:counter[0]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.687      ;
+; -4.654 ; \clk_proc:counter[0]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.687      ;
+; -4.653 ; \clk_proc:counter[0]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.686      ;
+; -4.651 ; \clk_proc:counter[0]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.684      ;
+; -4.618 ; \clk_proc:counter[0]  ; state_ena            ; clk          ; clk         ; 1.000        ; 0.056      ; 5.710      ;
+; -4.607 ; \clk_proc:counter[3]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.643      ;
+; -4.607 ; \clk_proc:counter[3]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.643      ;
+; -4.607 ; \clk_proc:counter[3]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.643      ;
+; -4.606 ; \clk_proc:counter[3]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.642      ;
+; -4.604 ; \clk_proc:counter[3]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.640      ;
+; -4.583 ; \clk_proc:counter[1]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.616      ;
+; -4.583 ; \clk_proc:counter[1]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.616      ;
+; -4.583 ; \clk_proc:counter[1]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.616      ;
+; -4.582 ; \clk_proc:counter[1]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.615      ;
+; -4.580 ; \clk_proc:counter[1]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.613      ;
+; -4.571 ; \clk_proc:counter[3]  ; state_ena            ; clk          ; clk         ; 1.000        ; 0.059      ; 5.666      ;
+; -4.556 ; \clk_proc:counter[4]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.592      ;
+; -4.556 ; \clk_proc:counter[4]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.592      ;
+; -4.556 ; \clk_proc:counter[4]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.592      ;
+; -4.555 ; \clk_proc:counter[4]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.591      ;
+; -4.553 ; \clk_proc:counter[4]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.589      ;
+; -4.547 ; \clk_proc:counter[1]  ; state_ena            ; clk          ; clk         ; 1.000        ; 0.056      ; 5.639      ;
+; -4.520 ; \clk_proc:counter[4]  ; state_ena            ; clk          ; clk         ; 1.000        ; 0.059      ; 5.615      ;
+; -4.484 ; \clk_proc:counter[5]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.520      ;
+; -4.484 ; \clk_proc:counter[5]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.520      ;
+; -4.484 ; \clk_proc:counter[5]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.520      ;
+; -4.483 ; \clk_proc:counter[5]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.519      ;
+; -4.481 ; \clk_proc:counter[5]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.517      ;
+; -4.448 ; \clk_proc:counter[5]  ; state_ena            ; clk          ; clk         ; 1.000        ; 0.059      ; 5.543      ;
+; -4.409 ; \clk_proc:counter[6]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.445      ;
+; -4.409 ; \clk_proc:counter[6]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.445      ;
+; -4.409 ; \clk_proc:counter[6]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.445      ;
+; -4.408 ; \clk_proc:counter[6]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.444      ;
+; -4.406 ; \clk_proc:counter[6]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 5.442      ;
+; -4.373 ; \clk_proc:counter[6]  ; state_ena            ; clk          ; clk         ; 1.000        ; 0.059      ; 5.468      ;
+; -4.151 ; \clk_proc:counter[7]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.184      ;
+; -4.151 ; \clk_proc:counter[7]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.184      ;
+; -4.151 ; \clk_proc:counter[7]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.184      ;
+; -4.150 ; \clk_proc:counter[7]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.183      ;
+; -4.148 ; \clk_proc:counter[7]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.181      ;
+; -4.115 ; \clk_proc:counter[7]  ; state_ena            ; clk          ; clk         ; 1.000        ; 0.056      ; 5.207      ;
+; -4.034 ; \clk_proc:counter[8]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.067      ;
+; -4.034 ; \clk_proc:counter[8]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.067      ;
+; -4.034 ; \clk_proc:counter[8]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.067      ;
+; -4.033 ; \clk_proc:counter[8]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.066      ;
+; -4.031 ; \clk_proc:counter[8]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 5.064      ;
+; -3.998 ; \clk_proc:counter[8]  ; state_ena            ; clk          ; clk         ; 1.000        ; 0.056      ; 5.090      ;
+; -3.928 ; \clk_proc:counter[9]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.961      ;
+; -3.928 ; \clk_proc:counter[9]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.961      ;
+; -3.928 ; \clk_proc:counter[9]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.961      ;
+; -3.927 ; \clk_proc:counter[9]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.960      ;
+; -3.925 ; \clk_proc:counter[9]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.958      ;
+; -3.892 ; \clk_proc:counter[10] ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.925      ;
+; -3.892 ; \clk_proc:counter[10] ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.925      ;
+; -3.892 ; \clk_proc:counter[10] ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.925      ;
+; -3.892 ; \clk_proc:counter[9]  ; state_ena            ; clk          ; clk         ; 1.000        ; 0.056      ; 4.984      ;
+; -3.891 ; \clk_proc:counter[10] ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.924      ;
+; -3.889 ; \clk_proc:counter[10] ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.922      ;
+; -3.856 ; \clk_proc:counter[10] ; state_ena            ; clk          ; clk         ; 1.000        ; 0.056      ; 4.948      ;
+; -3.786 ; \clk_proc:counter[11] ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.819      ;
+; -3.786 ; \clk_proc:counter[11] ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.819      ;
+; -3.786 ; \clk_proc:counter[11] ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.819      ;
+; -3.785 ; \clk_proc:counter[11] ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.818      ;
+; -3.783 ; \clk_proc:counter[11] ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.816      ;
+; -3.750 ; \clk_proc:counter[12] ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.783      ;
+; -3.750 ; \clk_proc:counter[12] ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.783      ;
+; -3.750 ; \clk_proc:counter[12] ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.783      ;
+; -3.750 ; \clk_proc:counter[11] ; state_ena            ; clk          ; clk         ; 1.000        ; 0.056      ; 4.842      ;
+; -3.749 ; \clk_proc:counter[12] ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.782      ;
+; -3.747 ; \clk_proc:counter[12] ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.780      ;
+; -3.714 ; \clk_proc:counter[12] ; state_ena            ; clk          ; clk         ; 1.000        ; 0.056      ; 4.806      ;
+; -3.644 ; \clk_proc:counter[13] ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.677      ;
+; -3.644 ; \clk_proc:counter[13] ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.677      ;
+; -3.644 ; \clk_proc:counter[13] ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.677      ;
+; -3.643 ; \clk_proc:counter[13] ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.676      ;
+; -3.641 ; \clk_proc:counter[13] ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.674      ;
+; -3.608 ; \clk_proc:counter[13] ; state_ena            ; clk          ; clk         ; 1.000        ; 0.056      ; 4.700      ;
+; -3.573 ; \clk_proc:counter[14] ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.606      ;
+; -3.573 ; \clk_proc:counter[14] ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.606      ;
+; -3.573 ; \clk_proc:counter[14] ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.606      ;
+; -3.572 ; \clk_proc:counter[14] ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.605      ;
+; -3.570 ; \clk_proc:counter[14] ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.603      ;
+; -3.537 ; \clk_proc:counter[14] ; state_ena            ; clk          ; clk         ; 1.000        ; 0.056      ; 4.629      ;
+; -3.519 ; \clk_proc:counter[15] ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.552      ;
+; -3.519 ; \clk_proc:counter[15] ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.552      ;
+; -3.519 ; \clk_proc:counter[15] ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.552      ;
+; -3.518 ; \clk_proc:counter[15] ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.551      ;
+; -3.516 ; \clk_proc:counter[15] ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 4.549      ;
+; -3.483 ; \clk_proc:counter[15] ; state_ena            ; clk          ; clk         ; 1.000        ; 0.056      ; 4.575      ;
+; -3.352 ; \clk_proc:counter[16] ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.010     ; 4.378      ;
+; -3.352 ; \clk_proc:counter[16] ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.010     ; 4.378      ;
+; -3.352 ; \clk_proc:counter[16] ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.010     ; 4.378      ;
+; -3.351 ; \clk_proc:counter[16] ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.010     ; 4.377      ;
++--------+-----------------------+----------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'ena'                                                                                               ;
++--------+------------------+------------------+-----------------+-------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node          ; Launch Clock    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------------+-----------------+-------------+--------------+------------+------------+
+; -2.988 ; state.sSTOP_609  ; state.sIDLE_729  ; state.sACK1_777 ; ena         ; 1.000        ; -2.559     ; 0.431      ;
+; -2.809 ; state.sSTOP_609  ; state.sIDLE_729  ; ena             ; ena         ; 1.000        ; -2.380     ; 0.431      ;
+; -1.978 ; state.sACK2_753  ; state.sSTART_801 ; state.sACK1_777 ; ena         ; 1.000        ; -0.058     ; 1.956      ;
+; -1.974 ; state.sACK2_753  ; state.sSTOP_609  ; state.sACK1_777 ; ena         ; 1.000        ; -0.086     ; 1.912      ;
+; -1.937 ; state.sACK2_753  ; state.sWRITE_705 ; state.sACK1_777 ; ena         ; 1.000        ; -0.059     ; 1.918      ;
+; -1.799 ; state.sACK2_753  ; state.sSTART_801 ; ena             ; ena         ; 1.000        ; 0.121      ; 1.956      ;
+; -1.795 ; state.sACK2_753  ; state.sSTOP_609  ; ena             ; ena         ; 1.000        ; 0.093      ; 1.912      ;
+; -1.758 ; state.sACK2_753  ; state.sWRITE_705 ; ena             ; ena         ; 1.000        ; 0.120      ; 1.918      ;
+; -1.713 ; state.sMACK_633  ; state.sSTART_801 ; state.sACK1_777 ; ena         ; 1.000        ; -0.058     ; 1.691      ;
+; -1.704 ; state.sMACK_633  ; state.sSTOP_609  ; state.sACK1_777 ; ena         ; 1.000        ; -0.086     ; 1.642      ;
+; -1.679 ; state.sMACK_633  ; state.sREAD_681  ; state.sACK1_777 ; ena         ; 1.000        ; -0.058     ; 1.667      ;
+; -1.534 ; state.sMACK_633  ; state.sSTART_801 ; ena             ; ena         ; 1.000        ; 0.121      ; 1.691      ;
+; -1.525 ; state.sMACK_633  ; state.sSTOP_609  ; ena             ; ena         ; 1.000        ; 0.093      ; 1.642      ;
+; -1.500 ; state.sMACK_633  ; state.sREAD_681  ; ena             ; ena         ; 1.000        ; 0.121      ; 1.667      ;
+; -1.301 ; state.sWRITE_705 ; state.sACK2_753  ; state.sACK1_777 ; ena         ; 1.000        ; -0.299     ; 1.116      ;
+; -1.287 ; state.sREAD_681  ; state.sMACK_633  ; state.sACK1_777 ; ena         ; 1.000        ; -0.300     ; 1.107      ;
+; -1.122 ; state.sWRITE_705 ; state.sACK2_753  ; ena             ; ena         ; 1.000        ; -0.120     ; 1.116      ;
+; -1.108 ; state.sREAD_681  ; state.sMACK_633  ; ena             ; ena         ; 1.000        ; -0.121     ; 1.107      ;
+; -0.709 ; state.sADDR_657  ; state.sACK1_777  ; state.sACK1_777 ; ena         ; 1.000        ; -0.150     ; 0.872      ;
+; -0.702 ; state.sSTART_801 ; state.sADDR_657  ; state.sACK1_777 ; ena         ; 1.000        ; -0.329     ; 0.549      ;
+; -0.530 ; state.sADDR_657  ; state.sACK1_777  ; ena             ; ena         ; 1.000        ; 0.029      ; 0.872      ;
+; -0.523 ; state.sSTART_801 ; state.sADDR_657  ; ena             ; ena         ; 1.000        ; -0.150     ; 0.549      ;
+; 0.133  ; state_ena        ; state.sSTOP_609  ; clk             ; ena         ; 0.500        ; 2.124      ; 1.515      ;
+; 0.159  ; state_ena        ; state.sSTART_801 ; clk             ; ena         ; 0.500        ; 2.152      ; 1.529      ;
+; 0.171  ; state_ena        ; state.sWRITE_705 ; clk             ; ena         ; 0.500        ; 2.151      ; 1.520      ;
+; 0.189  ; state_ena        ; state.sREAD_681  ; clk             ; ena         ; 0.500        ; 2.152      ; 1.509      ;
+; 0.822  ; ena              ; state.sSTART_801 ; ena             ; ena         ; 0.500        ; 5.058      ; 3.772      ;
+; 0.859  ; ena              ; state.sSTOP_609  ; ena             ; ena         ; 0.500        ; 5.030      ; 3.695      ;
+; 0.901  ; ena              ; state.sWRITE_705 ; ena             ; ena         ; 0.500        ; 5.057      ; 3.696      ;
+; 0.914  ; ena              ; state.sREAD_681  ; ena             ; ena         ; 0.500        ; 5.058      ; 3.690      ;
+; 1.006  ; state.sIDLE_729  ; state.sSTART_801 ; state.sACK1_777 ; ena         ; 1.000        ; 2.229      ; 1.259      ;
+; 1.185  ; state.sIDLE_729  ; state.sSTART_801 ; ena             ; ena         ; 1.000        ; 2.408      ; 1.259      ;
+; 1.322  ; ena              ; state.sSTART_801 ; ena             ; ena         ; 1.000        ; 5.058      ; 3.772      ;
+; 1.359  ; ena              ; state.sSTOP_609  ; ena             ; ena         ; 1.000        ; 5.030      ; 3.695      ;
+; 1.401  ; ena              ; state.sWRITE_705 ; ena             ; ena         ; 1.000        ; 5.057      ; 3.696      ;
+; 1.414  ; ena              ; state.sREAD_681  ; ena             ; ena         ; 1.000        ; 5.058      ; 3.690      ;
++--------+------------------+------------------+-----------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'state.sACK1_777'                                                                                        ;
++--------+------------------+------------------+-----------------+-----------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node          ; Launch Clock    ; Latch Clock     ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------------+-----------------+-----------------+--------------+------------+------------+
+; -1.547 ; ena              ; state.sREAD_681  ; ena             ; state.sACK1_777 ; 0.000        ; 5.237      ; 3.690      ;
+; -1.540 ; ena              ; state.sWRITE_705 ; ena             ; state.sACK1_777 ; 0.000        ; 5.236      ; 3.696      ;
+; -1.514 ; ena              ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; 0.000        ; 5.209      ; 3.695      ;
+; -1.465 ; ena              ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 0.000        ; 5.237      ; 3.772      ;
+; -1.328 ; state.sIDLE_729  ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 0.000        ; 2.587      ; 1.259      ;
+; -1.149 ; state.sIDLE_729  ; state.sSTART_801 ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 2.408      ; 1.259      ;
+; -1.047 ; ena              ; state.sREAD_681  ; ena             ; state.sACK1_777 ; -0.500       ; 5.237      ; 3.690      ;
+; -1.040 ; ena              ; state.sWRITE_705 ; ena             ; state.sACK1_777 ; -0.500       ; 5.236      ; 3.696      ;
+; -1.014 ; ena              ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; -0.500       ; 5.209      ; 3.695      ;
+; -0.965 ; ena              ; state.sSTART_801 ; ena             ; state.sACK1_777 ; -0.500       ; 5.237      ; 3.772      ;
+; -0.406 ; state_ena        ; state.sSTART_801 ; clk             ; state.sACK1_777 ; -0.500       ; 2.331      ; 1.425      ;
+; -0.322 ; state_ena        ; state.sREAD_681  ; clk             ; state.sACK1_777 ; -0.500       ; 2.331      ; 1.509      ;
+; -0.310 ; state_ena        ; state.sWRITE_705 ; clk             ; state.sACK1_777 ; -0.500       ; 2.330      ; 1.520      ;
+; -0.288 ; state_ena        ; state.sSTOP_609  ; clk             ; state.sACK1_777 ; -0.500       ; 2.303      ; 1.515      ;
+; 0.266  ; state.sACK1_777  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 1.502      ; 1.768      ;
+; 0.287  ; state.sACK1_777  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 1.501      ; 1.788      ;
+; 0.520  ; state.sSTART_801 ; state.sADDR_657  ; ena             ; state.sACK1_777 ; 0.000        ; 0.029      ; 0.549      ;
+; 0.699  ; state.sSTART_801 ; state.sADDR_657  ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; -0.150     ; 0.549      ;
+; 0.766  ; state.sACK1_777  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; 1.502      ; 1.768      ;
+; 0.787  ; state.sACK1_777  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; 1.501      ; 1.788      ;
+; 1.049  ; state.sREAD_681  ; state.sMACK_633  ; ena             ; state.sACK1_777 ; 0.000        ; 0.058      ; 1.107      ;
+; 1.057  ; state.sWRITE_705 ; state.sACK2_753  ; ena             ; state.sACK1_777 ; 0.000        ; 0.059      ; 1.116      ;
+; 1.082  ; bit_count[2]     ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.000      ; 1.082      ;
+; 1.111  ; bit_count[1]     ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.001      ; 1.112      ;
+; 1.139  ; bit_count[1]     ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.000      ; 1.139      ;
+; 1.228  ; state.sREAD_681  ; state.sMACK_633  ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; -0.121     ; 1.107      ;
+; 1.236  ; state.sWRITE_705 ; state.sACK2_753  ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; -0.120     ; 1.116      ;
+; 1.367  ; state.sMACK_633  ; state.sREAD_681  ; ena             ; state.sACK1_777 ; 0.000        ; 0.300      ; 1.667      ;
+; 1.370  ; state.sMACK_633  ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; 0.000        ; 0.272      ; 1.642      ;
+; 1.391  ; state.sMACK_633  ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 0.000        ; 0.300      ; 1.691      ;
+; 1.546  ; state.sMACK_633  ; state.sREAD_681  ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.121      ; 1.667      ;
+; 1.549  ; state.sMACK_633  ; state.sSTOP_609  ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.093      ; 1.642      ;
+; 1.570  ; state.sMACK_633  ; state.sSTART_801 ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.121      ; 1.691      ;
+; 1.619  ; state.sACK2_753  ; state.sWRITE_705 ; ena             ; state.sACK1_777 ; 0.000        ; 0.299      ; 1.918      ;
+; 1.640  ; state.sACK2_753  ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; 0.000        ; 0.272      ; 1.912      ;
+; 1.656  ; state.sACK2_753  ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 0.000        ; 0.300      ; 1.956      ;
+; 1.798  ; state.sACK2_753  ; state.sWRITE_705 ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.120      ; 1.918      ;
+; 1.819  ; state.sACK2_753  ; state.sSTOP_609  ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.093      ; 1.912      ;
+; 1.835  ; state.sACK2_753  ; state.sSTART_801 ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.121      ; 1.956      ;
+; 2.632  ; state.sSTOP_609  ; state.sIDLE_729  ; ena             ; state.sACK1_777 ; 0.000        ; -2.201     ; 0.431      ;
+; 2.811  ; state.sSTOP_609  ; state.sIDLE_729  ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; -2.380     ; 0.431      ;
+; 3.717  ; state.sIDLE_729  ; bit_count[2]     ; ena             ; state.sACK1_777 ; -0.500       ; -1.148     ; 2.069      ;
+; 3.738  ; state.sIDLE_729  ; bit_count[1]     ; ena             ; state.sACK1_777 ; -0.500       ; -1.149     ; 2.089      ;
+; 3.896  ; state.sIDLE_729  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -1.327     ; 2.069      ;
+; 3.917  ; state.sIDLE_729  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -1.328     ; 2.089      ;
+; 5.546  ; state.sSTOP_609  ; bit_count[2]     ; ena             ; state.sACK1_777 ; -0.500       ; -3.528     ; 1.518      ;
+; 5.555  ; state.sSTART_801 ; bit_count[2]     ; ena             ; state.sACK1_777 ; -0.500       ; -3.556     ; 1.499      ;
+; 5.567  ; state.sSTOP_609  ; bit_count[1]     ; ena             ; state.sACK1_777 ; -0.500       ; -3.529     ; 1.538      ;
+; 5.576  ; state.sSTART_801 ; bit_count[1]     ; ena             ; state.sACK1_777 ; -0.500       ; -3.557     ; 1.519      ;
+; 5.603  ; state.sMACK_633  ; bit_count[2]     ; ena             ; state.sACK1_777 ; -0.500       ; -3.435     ; 1.668      ;
+; 5.624  ; state.sMACK_633  ; bit_count[1]     ; ena             ; state.sACK1_777 ; -0.500       ; -3.436     ; 1.688      ;
+; 5.725  ; state.sSTOP_609  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -3.707     ; 1.518      ;
+; 5.734  ; state.sSTART_801 ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -3.735     ; 1.499      ;
+; 5.746  ; state.sSTOP_609  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -3.708     ; 1.538      ;
+; 5.755  ; state.sSTART_801 ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -3.736     ; 1.519      ;
+; 5.782  ; state.sMACK_633  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -3.614     ; 1.668      ;
+; 5.803  ; state.sMACK_633  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -3.615     ; 1.688      ;
+; 5.857  ; state.sACK2_753  ; bit_count[2]     ; ena             ; state.sACK1_777 ; -0.500       ; -3.435     ; 1.922      ;
+; 5.878  ; state.sACK2_753  ; bit_count[1]     ; ena             ; state.sACK1_777 ; -0.500       ; -3.436     ; 1.942      ;
+; 6.036  ; state.sACK2_753  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -3.614     ; 1.922      ;
+; 6.057  ; state.sACK2_753  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -3.615     ; 1.942      ;
++--------+------------------+------------------+-----------------+-----------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'ena'                                                                                                ;
++--------+------------------+------------------+-----------------+-------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node          ; Launch Clock    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------------+-----------------+-------------+--------------+------------+------------+
+; -1.368 ; ena              ; state.sREAD_681  ; ena             ; ena         ; 0.000        ; 5.058      ; 3.690      ;
+; -1.361 ; ena              ; state.sWRITE_705 ; ena             ; ena         ; 0.000        ; 5.057      ; 3.696      ;
+; -1.335 ; ena              ; state.sSTOP_609  ; ena             ; ena         ; 0.000        ; 5.030      ; 3.695      ;
+; -1.286 ; ena              ; state.sSTART_801 ; ena             ; ena         ; 0.000        ; 5.058      ; 3.772      ;
+; -1.149 ; state.sIDLE_729  ; state.sSTART_801 ; ena             ; ena         ; 0.000        ; 2.408      ; 1.259      ;
+; -0.970 ; state.sIDLE_729  ; state.sSTART_801 ; state.sACK1_777 ; ena         ; 0.000        ; 2.229      ; 1.259      ;
+; -0.868 ; ena              ; state.sREAD_681  ; ena             ; ena         ; -0.500       ; 5.058      ; 3.690      ;
+; -0.861 ; ena              ; state.sWRITE_705 ; ena             ; ena         ; -0.500       ; 5.057      ; 3.696      ;
+; -0.835 ; ena              ; state.sSTOP_609  ; ena             ; ena         ; -0.500       ; 5.030      ; 3.695      ;
+; -0.786 ; ena              ; state.sSTART_801 ; ena             ; ena         ; -0.500       ; 5.058      ; 3.772      ;
+; -0.227 ; state_ena        ; state.sSTART_801 ; clk             ; ena         ; -0.500       ; 2.152      ; 1.425      ;
+; -0.143 ; state_ena        ; state.sREAD_681  ; clk             ; ena         ; -0.500       ; 2.152      ; 1.509      ;
+; -0.131 ; state_ena        ; state.sWRITE_705 ; clk             ; ena         ; -0.500       ; 2.151      ; 1.520      ;
+; -0.109 ; state_ena        ; state.sSTOP_609  ; clk             ; ena         ; -0.500       ; 2.124      ; 1.515      ;
+; 0.699  ; state.sSTART_801 ; state.sADDR_657  ; ena             ; ena         ; 0.000        ; -0.150     ; 0.549      ;
+; 0.843  ; state.sADDR_657  ; state.sACK1_777  ; ena             ; ena         ; 0.000        ; 0.029      ; 0.872      ;
+; 0.878  ; state.sSTART_801 ; state.sADDR_657  ; state.sACK1_777 ; ena         ; 0.000        ; -0.329     ; 0.549      ;
+; 1.022  ; state.sADDR_657  ; state.sACK1_777  ; state.sACK1_777 ; ena         ; 0.000        ; -0.150     ; 0.872      ;
+; 1.228  ; state.sREAD_681  ; state.sMACK_633  ; ena             ; ena         ; 0.000        ; -0.121     ; 1.107      ;
+; 1.236  ; state.sWRITE_705 ; state.sACK2_753  ; ena             ; ena         ; 0.000        ; -0.120     ; 1.116      ;
+; 1.407  ; state.sREAD_681  ; state.sMACK_633  ; state.sACK1_777 ; ena         ; 0.000        ; -0.300     ; 1.107      ;
+; 1.415  ; state.sWRITE_705 ; state.sACK2_753  ; state.sACK1_777 ; ena         ; 0.000        ; -0.299     ; 1.116      ;
+; 1.546  ; state.sMACK_633  ; state.sREAD_681  ; ena             ; ena         ; 0.000        ; 0.121      ; 1.667      ;
+; 1.549  ; state.sMACK_633  ; state.sSTOP_609  ; ena             ; ena         ; 0.000        ; 0.093      ; 1.642      ;
+; 1.570  ; state.sMACK_633  ; state.sSTART_801 ; ena             ; ena         ; 0.000        ; 0.121      ; 1.691      ;
+; 1.725  ; state.sMACK_633  ; state.sREAD_681  ; state.sACK1_777 ; ena         ; 0.000        ; -0.058     ; 1.667      ;
+; 1.728  ; state.sMACK_633  ; state.sSTOP_609  ; state.sACK1_777 ; ena         ; 0.000        ; -0.086     ; 1.642      ;
+; 1.749  ; state.sMACK_633  ; state.sSTART_801 ; state.sACK1_777 ; ena         ; 0.000        ; -0.058     ; 1.691      ;
+; 1.798  ; state.sACK2_753  ; state.sWRITE_705 ; ena             ; ena         ; 0.000        ; 0.120      ; 1.918      ;
+; 1.819  ; state.sACK2_753  ; state.sSTOP_609  ; ena             ; ena         ; 0.000        ; 0.093      ; 1.912      ;
+; 1.835  ; state.sACK2_753  ; state.sSTART_801 ; ena             ; ena         ; 0.000        ; 0.121      ; 1.956      ;
+; 1.977  ; state.sACK2_753  ; state.sWRITE_705 ; state.sACK1_777 ; ena         ; 0.000        ; -0.059     ; 1.918      ;
+; 1.998  ; state.sACK2_753  ; state.sSTOP_609  ; state.sACK1_777 ; ena         ; 0.000        ; -0.086     ; 1.912      ;
+; 2.014  ; state.sACK2_753  ; state.sSTART_801 ; state.sACK1_777 ; ena         ; 0.000        ; -0.058     ; 1.956      ;
+; 2.811  ; state.sSTOP_609  ; state.sIDLE_729  ; ena             ; ena         ; 0.000        ; -2.380     ; 0.431      ;
+; 2.990  ; state.sSTOP_609  ; state.sIDLE_729  ; state.sACK1_777 ; ena         ; 0.000        ; -2.559     ; 0.431      ;
++--------+------------------+------------------+-----------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                      ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; 0.524 ; \clk_proc:counter[31] ; \clk_proc:counter[31] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.790      ;
+; 0.788 ; \clk_proc:counter[16] ; \clk_proc:counter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.054      ;
+; 0.788 ; \clk_proc:counter[7]  ; \clk_proc:counter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.054      ;
+; 0.798 ; \clk_proc:counter[0]  ; \clk_proc:counter[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.064      ;
+; 0.798 ; \clk_proc:counter[1]  ; \clk_proc:counter[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.064      ;
+; 0.798 ; \clk_proc:counter[17] ; \clk_proc:counter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.064      ;
+; 0.799 ; \clk_proc:counter[25] ; \clk_proc:counter[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799 ; \clk_proc:counter[27] ; \clk_proc:counter[27] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799 ; \clk_proc:counter[29] ; \clk_proc:counter[29] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799 ; \clk_proc:counter[30] ; \clk_proc:counter[30] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799 ; \clk_proc:counter[20] ; \clk_proc:counter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799 ; \clk_proc:counter[18] ; \clk_proc:counter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799 ; \clk_proc:counter[23] ; \clk_proc:counter[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799 ; \clk_proc:counter[9]  ; \clk_proc:counter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799 ; \clk_proc:counter[11] ; \clk_proc:counter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799 ; \clk_proc:counter[13] ; \clk_proc:counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799 ; \clk_proc:counter[14] ; \clk_proc:counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.799 ; \clk_proc:counter[15] ; \clk_proc:counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.065      ;
+; 0.831 ; \clk_proc:counter[26] ; \clk_proc:counter[26] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.097      ;
+; 0.831 ; \clk_proc:counter[28] ; \clk_proc:counter[28] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.097      ;
+; 0.831 ; \clk_proc:counter[19] ; \clk_proc:counter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.097      ;
+; 0.831 ; \clk_proc:counter[8]  ; \clk_proc:counter[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.097      ;
+; 0.831 ; \clk_proc:counter[10] ; \clk_proc:counter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.097      ;
+; 0.831 ; \clk_proc:counter[12] ; \clk_proc:counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.097      ;
+; 0.831 ; \clk_proc:counter[24] ; \clk_proc:counter[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.097      ;
+; 0.832 ; \clk_proc:counter[21] ; \clk_proc:counter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.098      ;
+; 0.832 ; \clk_proc:counter[22] ; \clk_proc:counter[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.098      ;
+; 1.171 ; \clk_proc:counter[16] ; \clk_proc:counter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.437      ;
+; 1.181 ; \clk_proc:counter[0]  ; \clk_proc:counter[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.447      ;
+; 1.181 ; \clk_proc:counter[17] ; \clk_proc:counter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.447      ;
+; 1.182 ; \clk_proc:counter[30] ; \clk_proc:counter[31] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182 ; \clk_proc:counter[29] ; \clk_proc:counter[30] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182 ; \clk_proc:counter[13] ; \clk_proc:counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182 ; \clk_proc:counter[14] ; \clk_proc:counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182 ; \clk_proc:counter[25] ; \clk_proc:counter[26] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182 ; \clk_proc:counter[27] ; \clk_proc:counter[28] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182 ; \clk_proc:counter[18] ; \clk_proc:counter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182 ; \clk_proc:counter[9]  ; \clk_proc:counter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182 ; \clk_proc:counter[11] ; \clk_proc:counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.448      ;
+; 1.182 ; \clk_proc:counter[20] ; \clk_proc:counter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.448      ;
+; 1.217 ; \clk_proc:counter[24] ; \clk_proc:counter[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.483      ;
+; 1.217 ; \clk_proc:counter[26] ; \clk_proc:counter[27] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.483      ;
+; 1.217 ; \clk_proc:counter[28] ; \clk_proc:counter[29] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.483      ;
+; 1.217 ; \clk_proc:counter[19] ; \clk_proc:counter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.483      ;
+; 1.217 ; \clk_proc:counter[8]  ; \clk_proc:counter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.483      ;
+; 1.217 ; \clk_proc:counter[10] ; \clk_proc:counter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.483      ;
+; 1.217 ; \clk_proc:counter[12] ; \clk_proc:counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.483      ;
+; 1.218 ; \clk_proc:counter[22] ; \clk_proc:counter[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.484      ;
+; 1.218 ; \clk_proc:counter[21] ; \clk_proc:counter[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.484      ;
+; 1.242 ; \clk_proc:counter[16] ; \clk_proc:counter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.508      ;
+; 1.252 ; \clk_proc:counter[17] ; \clk_proc:counter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.518      ;
+; 1.253 ; \clk_proc:counter[29] ; \clk_proc:counter[31] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.519      ;
+; 1.253 ; \clk_proc:counter[13] ; \clk_proc:counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.519      ;
+; 1.253 ; \clk_proc:counter[25] ; \clk_proc:counter[27] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.519      ;
+; 1.253 ; \clk_proc:counter[27] ; \clk_proc:counter[29] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.519      ;
+; 1.253 ; \clk_proc:counter[18] ; \clk_proc:counter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.519      ;
+; 1.253 ; \clk_proc:counter[9]  ; \clk_proc:counter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.519      ;
+; 1.253 ; \clk_proc:counter[11] ; \clk_proc:counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.519      ;
+; 1.253 ; \clk_proc:counter[20] ; \clk_proc:counter[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.519      ;
+; 1.263 ; \clk_proc:counter[7]  ; \clk_proc:counter[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.529      ;
+; 1.267 ; \clk_proc:counter[15] ; \clk_proc:counter[16] ; clk          ; clk         ; 0.000        ; 0.007      ; 1.540      ;
+; 1.274 ; \clk_proc:counter[23] ; \clk_proc:counter[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.540      ;
+; 1.288 ; \clk_proc:counter[28] ; \clk_proc:counter[30] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.554      ;
+; 1.288 ; \clk_proc:counter[12] ; \clk_proc:counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.554      ;
+; 1.288 ; \clk_proc:counter[24] ; \clk_proc:counter[26] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.554      ;
+; 1.288 ; \clk_proc:counter[26] ; \clk_proc:counter[28] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.554      ;
+; 1.288 ; \clk_proc:counter[8]  ; \clk_proc:counter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.554      ;
+; 1.288 ; \clk_proc:counter[10] ; \clk_proc:counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.554      ;
+; 1.288 ; \clk_proc:counter[19] ; \clk_proc:counter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.554      ;
+; 1.289 ; \clk_proc:counter[21] ; \clk_proc:counter[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.555      ;
+; 1.313 ; \clk_proc:counter[16] ; \clk_proc:counter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.579      ;
+; 1.321 ; \clk_proc:counter[14] ; \clk_proc:counter[16] ; clk          ; clk         ; 0.000        ; 0.007      ; 1.594      ;
+; 1.323 ; \clk_proc:counter[17] ; \clk_proc:counter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.589      ;
+; 1.324 ; \clk_proc:counter[27] ; \clk_proc:counter[30] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.590      ;
+; 1.324 ; \clk_proc:counter[11] ; \clk_proc:counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.590      ;
+; 1.324 ; \clk_proc:counter[25] ; \clk_proc:counter[28] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.590      ;
+; 1.324 ; \clk_proc:counter[9]  ; \clk_proc:counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.590      ;
+; 1.324 ; \clk_proc:counter[18] ; \clk_proc:counter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.590      ;
+; 1.324 ; \clk_proc:counter[20] ; \clk_proc:counter[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.590      ;
+; 1.334 ; \clk_proc:counter[7]  ; \clk_proc:counter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.600      ;
+; 1.338 ; \clk_proc:counter[15] ; \clk_proc:counter[17] ; clk          ; clk         ; 0.000        ; 0.007      ; 1.611      ;
+; 1.345 ; \clk_proc:counter[23] ; \clk_proc:counter[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.611      ;
+; 1.359 ; \clk_proc:counter[28] ; \clk_proc:counter[31] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.625      ;
+; 1.359 ; \clk_proc:counter[12] ; \clk_proc:counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.625      ;
+; 1.359 ; \clk_proc:counter[24] ; \clk_proc:counter[27] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.625      ;
+; 1.359 ; \clk_proc:counter[26] ; \clk_proc:counter[29] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.625      ;
+; 1.359 ; \clk_proc:counter[8]  ; \clk_proc:counter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.625      ;
+; 1.359 ; \clk_proc:counter[10] ; \clk_proc:counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.625      ;
+; 1.359 ; \clk_proc:counter[19] ; \clk_proc:counter[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.625      ;
+; 1.362 ; \clk_proc:counter[6]  ; \clk_proc:counter[7]  ; clk          ; clk         ; 0.000        ; 0.003      ; 1.631      ;
+; 1.377 ; \clk_proc:counter[22] ; \clk_proc:counter[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.643      ;
+; 1.384 ; \clk_proc:counter[16] ; \clk_proc:counter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.650      ;
+; 1.392 ; \clk_proc:counter[13] ; \clk_proc:counter[16] ; clk          ; clk         ; 0.000        ; 0.007      ; 1.665      ;
+; 1.392 ; \clk_proc:counter[14] ; \clk_proc:counter[17] ; clk          ; clk         ; 0.000        ; 0.007      ; 1.665      ;
+; 1.394 ; \clk_proc:counter[17] ; \clk_proc:counter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.660      ;
+; 1.395 ; \clk_proc:counter[27] ; \clk_proc:counter[31] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.661      ;
+; 1.395 ; \clk_proc:counter[11] ; \clk_proc:counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.661      ;
+; 1.395 ; \clk_proc:counter[25] ; \clk_proc:counter[29] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.661      ;
+; 1.395 ; \clk_proc:counter[9]  ; \clk_proc:counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.661      ;
+; 1.395 ; \clk_proc:counter[18] ; \clk_proc:counter[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.661      ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[10]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[10]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[11]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[11]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[12]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[12]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[13]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[13]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[14]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[14]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[15]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[15]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[16]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[16]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[17]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[17]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[18]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[18]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[19]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[19]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[20]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[20]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[21]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[21]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[22]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[22]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[23]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[23]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[24]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[24]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[25]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[25]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[26]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[26]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[27]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[27]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[28]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[28]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[29]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[29]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[30]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[30]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[31]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[31]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[8]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[8]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[9]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[9]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state_ena                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state_ena                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[10]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[10]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[11]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[11]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[12]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[12]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[13]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[13]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[14]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[14]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[15]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[15]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[16]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[16]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[17]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[17]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[18]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[18]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[19]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[19]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[20]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[20]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[21]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[21]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[22]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[22]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[23]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[23]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[24]|clk ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'ena'                                                                        ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; ena   ; Rise       ; ena                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; Selector8~2|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; Selector8~2|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; Selector8~2|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; Selector8~2|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; Selector8~3clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; Selector8~3clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; Selector8~3clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; Selector8~3clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; Selector8~3|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; Selector8~3|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; Selector8~3|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; Selector8~3|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; ena|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; ena|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sACK1_777             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sACK1_777             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sACK1_777|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sACK1_777|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sACK2_753             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sACK2_753             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sACK2_753|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sACK2_753|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sADDR_657             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sADDR_657             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sADDR_657|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sADDR_657|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sIDLE_729             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sIDLE_729             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sIDLE_729|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sIDLE_729|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sMACK_633             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sMACK_633             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sMACK_633|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sMACK_633|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sREAD_681             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sREAD_681             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sREAD_681|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sREAD_681|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sSTART_801            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sSTART_801            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sSTART_801|datac      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sSTART_801|datac      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sSTOP_609             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sSTOP_609             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sSTOP_609|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sSTOP_609|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sWRITE_705            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sWRITE_705            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sWRITE_705|datac      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sWRITE_705|datac      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'state.sACK1_777'                                                                     ;
++-------+--------------+----------------+------------------+-----------------+------------+-----------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock           ; Clock Edge ; Target                      ;
++-------+--------------+----------------+------------------+-----------------+------------+-----------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; Selector8~1|combout         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; Selector8~1|combout         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; Selector8~1|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; Selector8~1|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; Selector8~3clkctrl|inclk[0] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; Selector8~3clkctrl|inclk[0] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; Selector8~3clkctrl|outclk   ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; Selector8~3clkctrl|outclk   ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; Selector8~3|combout         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; Selector8~3|combout         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; Selector8~3|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; Selector8~3|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; WideOr0~0|combout           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; WideOr0~0|combout           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; WideOr0~0|datac             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; WideOr0~0|datac             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; WideOr1|combout             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; WideOr1|combout             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; WideOr1|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; WideOr1|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; bit_count[0]~4|combout      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; bit_count[0]~4|combout      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; bit_count[0]~4|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; bit_count[0]~4|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; bit_count[1]                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; bit_count[1]                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; bit_count[1]|datac          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; bit_count[1]|datac          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; bit_count[2]                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; bit_count[2]                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; bit_count[2]|datac          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; bit_count[2]|datac          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sACK1_777|combout     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sACK1_777|combout     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sACK1_777|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sACK1_777|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sACK2_753             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sACK2_753             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sACK2_753|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sACK2_753|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sADDR_657             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sADDR_657             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sADDR_657|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sADDR_657|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sIDLE_729             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sIDLE_729             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sIDLE_729|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sIDLE_729|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sMACK_633             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sMACK_633             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sMACK_633|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sMACK_633|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sREAD_681             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sREAD_681             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sREAD_681|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sREAD_681|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sSTART_801            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sSTART_801            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sSTART_801|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sSTART_801|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sSTOP_609             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sSTOP_609             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sSTOP_609|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sSTOP_609|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sWRITE_705            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sWRITE_705            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sWRITE_705|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sWRITE_705|datac      ;
++-------+--------------+----------------+------------------+-----------------+------------+-----------------------------+
+
+
++------------------------------------------------------------------------------+
+; Setup Times                                                                  ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; ena       ; ena             ; -0.322 ; -0.322 ; Fall       ; ena             ;
+; rnw       ; ena             ; 2.667  ; 2.667  ; Fall       ; ena             ;
+; ena       ; state.sACK1_777 ; -0.501 ; -0.501 ; Fall       ; state.sACK1_777 ;
+; rnw       ; state.sACK1_777 ; 2.488  ; 2.488  ; Fall       ; state.sACK1_777 ;
++-----------+-----------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; ena       ; ena             ; 1.368  ; 1.368  ; Fall       ; ena             ;
+; rnw       ; ena             ; -1.583 ; -1.583 ; Fall       ; ena             ;
+; ena       ; state.sACK1_777 ; 1.547  ; 1.547  ; Fall       ; state.sACK1_777 ;
+; rnw       ; state.sACK1_777 ; -1.404 ; -1.404 ; Fall       ; state.sACK1_777 ;
++-----------+-----------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; busy      ; ena             ; 8.749 ; 8.749 ; Fall       ; ena             ;
+; busy      ; state.sACK1_777 ;       ; 3.658 ; Rise       ; state.sACK1_777 ;
+; busy      ; state.sACK1_777 ; 8.928 ; 8.928 ; Fall       ; state.sACK1_777 ;
++-----------+-----------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; busy      ; ena             ; 6.609 ; 6.609 ; Fall       ; ena             ;
+; busy      ; state.sACK1_777 ;       ; 3.658 ; Rise       ; state.sACK1_777 ;
+; busy      ; state.sACK1_777 ; 3.658 ; 6.788 ; Fall       ; state.sACK1_777 ;
++-----------+-----------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------+
+; Fast Model Setup Summary                 ;
++-----------------+--------+---------------+
+; Clock           ; Slack  ; End Point TNS ;
++-----------------+--------+---------------+
+; state.sACK1_777 ; -2.813 ; -7.635        ;
+; clk             ; -1.874 ; -19.468       ;
+; ena             ; -1.036 ; -1.654        ;
++-----------------+--------+---------------+
+
+
++------------------------------------------+
+; Fast Model Hold Summary                  ;
++-----------------+--------+---------------+
+; Clock           ; Slack  ; End Point TNS ;
++-----------------+--------+---------------+
+; ena             ; -1.011 ; -3.544        ;
+; state.sACK1_777 ; -0.934 ; -3.236        ;
+; clk             ; 0.241  ; 0.000         ;
++-----------------+--------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++------------------------------------------+
+; Fast Model Minimum Pulse Width Summary   ;
++-----------------+--------+---------------+
+; Clock           ; Slack  ; End Point TNS ;
++-----------------+--------+---------------+
+; clk             ; -1.380 ; -34.380       ;
+; ena             ; -1.222 ; -1.222        ;
+; state.sACK1_777 ; 0.500  ; 0.000         ;
++-----------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'state.sACK1_777'                                                                                       ;
++--------+------------------+------------------+-----------------+-----------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node          ; Launch Clock    ; Latch Clock     ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------------+-----------------+-----------------+--------------+------------+------------+
+; -2.813 ; state.sACK2_753  ; bit_count[1]     ; ena             ; state.sACK1_777 ; 0.500        ; -2.050     ; 0.840      ;
+; -2.783 ; state.sACK2_753  ; bit_count[2]     ; ena             ; state.sACK1_777 ; 0.500        ; -2.052     ; 0.829      ;
+; -2.736 ; state.sACK2_753  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -1.973     ; 0.840      ;
+; -2.706 ; state.sACK2_753  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -1.975     ; 0.829      ;
+; -2.686 ; state.sMACK_633  ; bit_count[1]     ; ena             ; state.sACK1_777 ; 0.500        ; -2.050     ; 0.713      ;
+; -2.664 ; state.sSTART_801 ; bit_count[1]     ; ena             ; state.sACK1_777 ; 0.500        ; -2.100     ; 0.641      ;
+; -2.658 ; state.sSTOP_609  ; bit_count[1]     ; ena             ; state.sACK1_777 ; 0.500        ; -2.083     ; 0.652      ;
+; -2.656 ; state.sMACK_633  ; bit_count[2]     ; ena             ; state.sACK1_777 ; 0.500        ; -2.052     ; 0.702      ;
+; -2.634 ; state.sSTART_801 ; bit_count[2]     ; ena             ; state.sACK1_777 ; 0.500        ; -2.102     ; 0.630      ;
+; -2.628 ; state.sSTOP_609  ; bit_count[2]     ; ena             ; state.sACK1_777 ; 0.500        ; -2.085     ; 0.641      ;
+; -2.609 ; state.sMACK_633  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -1.973     ; 0.713      ;
+; -2.587 ; state.sSTART_801 ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -2.023     ; 0.641      ;
+; -2.581 ; state.sSTOP_609  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -2.006     ; 0.652      ;
+; -2.579 ; state.sMACK_633  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -1.975     ; 0.702      ;
+; -2.557 ; state.sSTART_801 ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -2.025     ; 0.630      ;
+; -2.551 ; state.sSTOP_609  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -2.008     ; 0.641      ;
+; -1.473 ; state.sIDLE_729  ; bit_count[1]     ; ena             ; state.sACK1_777 ; 0.500        ; -0.638     ; 0.912      ;
+; -1.443 ; state.sIDLE_729  ; bit_count[2]     ; ena             ; state.sACK1_777 ; 0.500        ; -0.640     ; 0.901      ;
+; -1.396 ; state.sIDLE_729  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -0.561     ; 0.912      ;
+; -1.366 ; state.sIDLE_729  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; -0.563     ; 0.901      ;
+; -1.113 ; state.sSTOP_609  ; state.sIDLE_729  ; ena             ; state.sACK1_777 ; 1.000        ; -1.522     ; 0.182      ;
+; -1.036 ; state.sSTOP_609  ; state.sIDLE_729  ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; -1.445     ; 0.182      ;
+; -0.278 ; state.sACK2_753  ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; 1.000        ; -0.044     ; 0.828      ;
+; -0.262 ; state.sACK2_753  ; state.sWRITE_705 ; ena             ; state.sACK1_777 ; 1.000        ; -0.028     ; 0.836      ;
+; -0.256 ; state.sACK2_753  ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 1.000        ; -0.027     ; 0.830      ;
+; -0.201 ; state.sACK2_753  ; state.sSTOP_609  ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.033      ; 0.828      ;
+; -0.185 ; state.sACK2_753  ; state.sWRITE_705 ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.049      ; 0.836      ;
+; -0.179 ; state.sACK2_753  ; state.sSTART_801 ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.050      ; 0.830      ;
+; -0.164 ; state.sMACK_633  ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; 1.000        ; -0.044     ; 0.714      ;
+; -0.146 ; state.sMACK_633  ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 1.000        ; -0.027     ; 0.720      ;
+; -0.130 ; state.sMACK_633  ; state.sREAD_681  ; ena             ; state.sACK1_777 ; 1.000        ; -0.027     ; 0.711      ;
+; -0.087 ; state.sMACK_633  ; state.sSTOP_609  ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.033      ; 0.714      ;
+; -0.069 ; state.sMACK_633  ; state.sSTART_801 ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.050      ; 0.720      ;
+; -0.053 ; state.sMACK_633  ; state.sREAD_681  ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.050      ; 0.711      ;
+; -0.024 ; state.sACK1_777  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; 0.650      ; 0.751      ;
+; 0.006  ; state.sACK1_777  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.500        ; 0.648      ; 0.740      ;
+; 0.020  ; state.sWRITE_705 ; state.sACK2_753  ; ena             ; state.sACK1_777 ; 1.000        ; -0.126     ; 0.487      ;
+; 0.039  ; state.sREAD_681  ; state.sMACK_633  ; ena             ; state.sACK1_777 ; 1.000        ; -0.127     ; 0.473      ;
+; 0.094  ; bit_count[1]     ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.000      ; 0.483      ;
+; 0.097  ; state.sWRITE_705 ; state.sACK2_753  ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; -0.049     ; 0.487      ;
+; 0.116  ; state.sREAD_681  ; state.sMACK_633  ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; -0.050     ; 0.473      ;
+; 0.130  ; bit_count[1]     ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; -0.002     ; 0.466      ;
+; 0.139  ; bit_count[2]     ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.000      ; 0.459      ;
+; 0.288  ; state.sSTART_801 ; state.sADDR_657  ; ena             ; state.sACK1_777 ; 1.000        ; -0.142     ; 0.229      ;
+; 0.365  ; state.sSTART_801 ; state.sADDR_657  ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; -0.065     ; 0.229      ;
+; 0.476  ; state.sACK1_777  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.650      ; 0.751      ;
+; 0.491  ; state_ena        ; state.sSTOP_609  ; clk             ; state.sACK1_777 ; 0.500        ; 1.094      ; 0.697      ;
+; 0.506  ; state.sACK1_777  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 0.648      ; 0.740      ;
+; 0.511  ; state_ena        ; state.sWRITE_705 ; clk             ; state.sACK1_777 ; 0.500        ; 1.110      ; 0.701      ;
+; 0.514  ; state_ena        ; state.sSTART_801 ; clk             ; state.sACK1_777 ; 0.500        ; 1.111      ; 0.698      ;
+; 0.526  ; state_ena        ; state.sREAD_681  ; clk             ; state.sACK1_777 ; 0.500        ; 1.111      ; 0.693      ;
+; 0.831  ; ena              ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 0.500        ; 2.673      ; 1.943      ;
+; 0.857  ; ena              ; state.sWRITE_705 ; ena             ; state.sACK1_777 ; 0.500        ; 2.672      ; 1.917      ;
+; 0.859  ; ena              ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; 0.500        ; 2.656      ; 1.891      ;
+; 0.890  ; ena              ; state.sREAD_681  ; ena             ; state.sACK1_777 ; 0.500        ; 2.673      ; 1.891      ;
+; 1.331  ; ena              ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 1.000        ; 2.673      ; 1.943      ;
+; 1.357  ; ena              ; state.sWRITE_705 ; ena             ; state.sACK1_777 ; 1.000        ; 2.672      ; 1.917      ;
+; 1.359  ; ena              ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; 1.000        ; 2.656      ; 1.891      ;
+; 1.390  ; ena              ; state.sREAD_681  ; ena             ; state.sACK1_777 ; 1.000        ; 2.673      ; 1.891      ;
+; 1.458  ; state.sIDLE_729  ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 1.000        ; 1.385      ; 0.528      ;
+; 1.535  ; state.sIDLE_729  ; state.sSTART_801 ; state.sACK1_777 ; state.sACK1_777 ; 1.000        ; 1.462      ; 0.528      ;
++--------+------------------+------------------+-----------------+-----------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                     ;
++--------+-----------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node             ; To Node              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; -1.874 ; \clk_proc:counter[2]  ; state_ena            ; clk          ; clk         ; 1.000        ; -0.200     ; 2.706      ;
+; -1.864 ; \clk_proc:counter[0]  ; state_ena            ; clk          ; clk         ; 1.000        ; -0.203     ; 2.693      ;
+; -1.836 ; \clk_proc:counter[3]  ; state_ena            ; clk          ; clk         ; 1.000        ; -0.200     ; 2.668      ;
+; -1.828 ; \clk_proc:counter[1]  ; state_ena            ; clk          ; clk         ; 1.000        ; -0.203     ; 2.657      ;
+; -1.808 ; \clk_proc:counter[4]  ; state_ena            ; clk          ; clk         ; 1.000        ; -0.200     ; 2.640      ;
+; -1.772 ; \clk_proc:counter[5]  ; state_ena            ; clk          ; clk         ; 1.000        ; -0.200     ; 2.604      ;
+; -1.733 ; \clk_proc:counter[6]  ; state_ena            ; clk          ; clk         ; 1.000        ; -0.200     ; 2.565      ;
+; -1.665 ; \clk_proc:counter[2]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.697      ;
+; -1.664 ; \clk_proc:counter[2]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.696      ;
+; -1.664 ; \clk_proc:counter[2]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.696      ;
+; -1.663 ; \clk_proc:counter[2]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.695      ;
+; -1.661 ; \clk_proc:counter[2]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.693      ;
+; -1.655 ; \clk_proc:counter[0]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.684      ;
+; -1.654 ; \clk_proc:counter[0]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.683      ;
+; -1.654 ; \clk_proc:counter[0]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.683      ;
+; -1.653 ; \clk_proc:counter[0]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.682      ;
+; -1.651 ; \clk_proc:counter[0]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.680      ;
+; -1.627 ; \clk_proc:counter[3]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.659      ;
+; -1.626 ; \clk_proc:counter[3]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.658      ;
+; -1.626 ; \clk_proc:counter[3]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.658      ;
+; -1.625 ; \clk_proc:counter[3]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.657      ;
+; -1.623 ; \clk_proc:counter[3]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.655      ;
+; -1.619 ; \clk_proc:counter[1]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.648      ;
+; -1.618 ; \clk_proc:counter[1]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.647      ;
+; -1.618 ; \clk_proc:counter[1]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.647      ;
+; -1.617 ; \clk_proc:counter[1]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.646      ;
+; -1.615 ; \clk_proc:counter[1]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.644      ;
+; -1.611 ; \clk_proc:counter[7]  ; state_ena            ; clk          ; clk         ; 1.000        ; -0.203     ; 2.440      ;
+; -1.599 ; \clk_proc:counter[4]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.631      ;
+; -1.598 ; \clk_proc:counter[4]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.630      ;
+; -1.598 ; \clk_proc:counter[4]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.630      ;
+; -1.597 ; \clk_proc:counter[4]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.629      ;
+; -1.595 ; \clk_proc:counter[4]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.627      ;
+; -1.563 ; \clk_proc:counter[5]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.595      ;
+; -1.562 ; \clk_proc:counter[5]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.594      ;
+; -1.562 ; \clk_proc:counter[5]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.594      ;
+; -1.561 ; \clk_proc:counter[5]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.593      ;
+; -1.559 ; \clk_proc:counter[5]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.591      ;
+; -1.538 ; \clk_proc:counter[8]  ; state_ena            ; clk          ; clk         ; 1.000        ; -0.203     ; 2.367      ;
+; -1.524 ; \clk_proc:counter[6]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.556      ;
+; -1.523 ; \clk_proc:counter[6]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.555      ;
+; -1.523 ; \clk_proc:counter[6]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.555      ;
+; -1.522 ; \clk_proc:counter[6]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.554      ;
+; -1.520 ; \clk_proc:counter[6]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.552      ;
+; -1.490 ; \clk_proc:counter[9]  ; state_ena            ; clk          ; clk         ; 1.000        ; -0.203     ; 2.319      ;
+; -1.468 ; \clk_proc:counter[10] ; state_ena            ; clk          ; clk         ; 1.000        ; -0.203     ; 2.297      ;
+; -1.420 ; \clk_proc:counter[11] ; state_ena            ; clk          ; clk         ; 1.000        ; -0.203     ; 2.249      ;
+; -1.402 ; \clk_proc:counter[7]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.431      ;
+; -1.401 ; \clk_proc:counter[7]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.430      ;
+; -1.401 ; \clk_proc:counter[7]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.430      ;
+; -1.400 ; \clk_proc:counter[7]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.429      ;
+; -1.399 ; \clk_proc:counter[12] ; state_ena            ; clk          ; clk         ; 1.000        ; -0.203     ; 2.228      ;
+; -1.398 ; \clk_proc:counter[7]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.427      ;
+; -1.351 ; \clk_proc:counter[13] ; state_ena            ; clk          ; clk         ; 1.000        ; -0.203     ; 2.180      ;
+; -1.329 ; \clk_proc:counter[8]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.358      ;
+; -1.328 ; \clk_proc:counter[8]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.357      ;
+; -1.328 ; \clk_proc:counter[8]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.357      ;
+; -1.327 ; \clk_proc:counter[8]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.356      ;
+; -1.325 ; \clk_proc:counter[8]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.354      ;
+; -1.316 ; \clk_proc:counter[14] ; state_ena            ; clk          ; clk         ; 1.000        ; -0.203     ; 2.145      ;
+; -1.281 ; \clk_proc:counter[9]  ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.310      ;
+; -1.280 ; \clk_proc:counter[9]  ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.309      ;
+; -1.280 ; \clk_proc:counter[9]  ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.309      ;
+; -1.279 ; \clk_proc:counter[9]  ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.308      ;
+; -1.277 ; \clk_proc:counter[9]  ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.306      ;
+; -1.276 ; \clk_proc:counter[15] ; state_ena            ; clk          ; clk         ; 1.000        ; -0.203     ; 2.105      ;
+; -1.259 ; \clk_proc:counter[10] ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.288      ;
+; -1.258 ; \clk_proc:counter[10] ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.287      ;
+; -1.258 ; \clk_proc:counter[10] ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.287      ;
+; -1.257 ; \clk_proc:counter[10] ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.286      ;
+; -1.255 ; \clk_proc:counter[10] ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.284      ;
+; -1.211 ; \clk_proc:counter[11] ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.240      ;
+; -1.210 ; \clk_proc:counter[11] ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.239      ;
+; -1.210 ; \clk_proc:counter[11] ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.239      ;
+; -1.209 ; \clk_proc:counter[11] ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.238      ;
+; -1.207 ; \clk_proc:counter[11] ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.236      ;
+; -1.195 ; \clk_proc:counter[16] ; state_ena            ; clk          ; clk         ; 1.000        ; -0.210     ; 2.017      ;
+; -1.190 ; \clk_proc:counter[12] ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.219      ;
+; -1.189 ; \clk_proc:counter[12] ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.218      ;
+; -1.189 ; \clk_proc:counter[12] ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.218      ;
+; -1.188 ; \clk_proc:counter[12] ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.217      ;
+; -1.186 ; \clk_proc:counter[12] ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.215      ;
+; -1.164 ; \clk_proc:counter[17] ; state_ena            ; clk          ; clk         ; 1.000        ; -0.210     ; 1.986      ;
+; -1.142 ; \clk_proc:counter[13] ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.171      ;
+; -1.141 ; \clk_proc:counter[13] ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.170      ;
+; -1.141 ; \clk_proc:counter[13] ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.170      ;
+; -1.140 ; \clk_proc:counter[13] ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.169      ;
+; -1.138 ; \clk_proc:counter[13] ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.167      ;
+; -1.130 ; \clk_proc:counter[18] ; state_ena            ; clk          ; clk         ; 1.000        ; -0.210     ; 1.952      ;
+; -1.108 ; \clk_proc:counter[19] ; state_ena            ; clk          ; clk         ; 1.000        ; -0.210     ; 1.930      ;
+; -1.107 ; \clk_proc:counter[14] ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.136      ;
+; -1.106 ; \clk_proc:counter[14] ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.135      ;
+; -1.106 ; \clk_proc:counter[14] ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.135      ;
+; -1.105 ; \clk_proc:counter[14] ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.134      ;
+; -1.103 ; \clk_proc:counter[14] ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.132      ;
+; -1.067 ; \clk_proc:counter[15] ; \clk_proc:counter[6] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.096      ;
+; -1.066 ; \clk_proc:counter[15] ; \clk_proc:counter[4] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.095      ;
+; -1.066 ; \clk_proc:counter[15] ; \clk_proc:counter[2] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.095      ;
+; -1.065 ; \clk_proc:counter[15] ; \clk_proc:counter[5] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.094      ;
+; -1.063 ; \clk_proc:counter[15] ; \clk_proc:counter[3] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.092      ;
++--------+-----------------------+----------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'ena'                                                                                               ;
++--------+------------------+------------------+-----------------+-------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node          ; Launch Clock    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------------+-----------------+-------------+--------------+------------+------------+
+; -1.036 ; state.sSTOP_609  ; state.sIDLE_729  ; ena             ; ena         ; 1.000        ; -1.445     ; 0.182      ;
+; -0.959 ; state.sSTOP_609  ; state.sIDLE_729  ; state.sACK1_777 ; ena         ; 1.000        ; -1.368     ; 0.182      ;
+; -0.201 ; state.sACK2_753  ; state.sSTOP_609  ; ena             ; ena         ; 1.000        ; 0.033      ; 0.828      ;
+; -0.185 ; state.sACK2_753  ; state.sWRITE_705 ; ena             ; ena         ; 1.000        ; 0.049      ; 0.836      ;
+; -0.179 ; state.sACK2_753  ; state.sSTART_801 ; ena             ; ena         ; 1.000        ; 0.050      ; 0.830      ;
+; -0.124 ; state.sACK2_753  ; state.sSTOP_609  ; state.sACK1_777 ; ena         ; 1.000        ; 0.110      ; 0.828      ;
+; -0.108 ; state.sACK2_753  ; state.sWRITE_705 ; state.sACK1_777 ; ena         ; 1.000        ; 0.126      ; 0.836      ;
+; -0.102 ; state.sACK2_753  ; state.sSTART_801 ; state.sACK1_777 ; ena         ; 1.000        ; 0.127      ; 0.830      ;
+; -0.087 ; state.sMACK_633  ; state.sSTOP_609  ; ena             ; ena         ; 1.000        ; 0.033      ; 0.714      ;
+; -0.069 ; state.sMACK_633  ; state.sSTART_801 ; ena             ; ena         ; 1.000        ; 0.050      ; 0.720      ;
+; -0.053 ; state.sMACK_633  ; state.sREAD_681  ; ena             ; ena         ; 1.000        ; 0.050      ; 0.711      ;
+; -0.010 ; state.sMACK_633  ; state.sSTOP_609  ; state.sACK1_777 ; ena         ; 1.000        ; 0.110      ; 0.714      ;
+; 0.008  ; state.sMACK_633  ; state.sSTART_801 ; state.sACK1_777 ; ena         ; 1.000        ; 0.127      ; 0.720      ;
+; 0.024  ; state.sMACK_633  ; state.sREAD_681  ; state.sACK1_777 ; ena         ; 1.000        ; 0.127      ; 0.711      ;
+; 0.097  ; state.sWRITE_705 ; state.sACK2_753  ; ena             ; ena         ; 1.000        ; -0.049     ; 0.487      ;
+; 0.116  ; state.sREAD_681  ; state.sMACK_633  ; ena             ; ena         ; 1.000        ; -0.050     ; 0.473      ;
+; 0.174  ; state.sWRITE_705 ; state.sACK2_753  ; state.sACK1_777 ; ena         ; 1.000        ; 0.028      ; 0.487      ;
+; 0.193  ; state.sREAD_681  ; state.sMACK_633  ; state.sACK1_777 ; ena         ; 1.000        ; 0.027      ; 0.473      ;
+; 0.359  ; state.sADDR_657  ; state.sACK1_777  ; ena             ; ena         ; 1.000        ; 0.015      ; 0.377      ;
+; 0.365  ; state.sSTART_801 ; state.sADDR_657  ; ena             ; ena         ; 1.000        ; -0.065     ; 0.229      ;
+; 0.436  ; state.sADDR_657  ; state.sACK1_777  ; state.sACK1_777 ; ena         ; 1.000        ; 0.092      ; 0.377      ;
+; 0.442  ; state.sSTART_801 ; state.sADDR_657  ; state.sACK1_777 ; ena         ; 1.000        ; 0.012      ; 0.229      ;
+; 0.568  ; state_ena        ; state.sSTOP_609  ; clk             ; ena         ; 0.500        ; 1.171      ; 0.697      ;
+; 0.588  ; state_ena        ; state.sWRITE_705 ; clk             ; ena         ; 0.500        ; 1.187      ; 0.701      ;
+; 0.591  ; state_ena        ; state.sSTART_801 ; clk             ; ena         ; 0.500        ; 1.188      ; 0.698      ;
+; 0.603  ; state_ena        ; state.sREAD_681  ; clk             ; ena         ; 0.500        ; 1.188      ; 0.693      ;
+; 0.908  ; ena              ; state.sSTART_801 ; ena             ; ena         ; 0.500        ; 2.750      ; 1.943      ;
+; 0.934  ; ena              ; state.sWRITE_705 ; ena             ; ena         ; 0.500        ; 2.749      ; 1.917      ;
+; 0.936  ; ena              ; state.sSTOP_609  ; ena             ; ena         ; 0.500        ; 2.733      ; 1.891      ;
+; 0.967  ; ena              ; state.sREAD_681  ; ena             ; ena         ; 0.500        ; 2.750      ; 1.891      ;
+; 1.408  ; ena              ; state.sSTART_801 ; ena             ; ena         ; 1.000        ; 2.750      ; 1.943      ;
+; 1.434  ; ena              ; state.sWRITE_705 ; ena             ; ena         ; 1.000        ; 2.749      ; 1.917      ;
+; 1.436  ; ena              ; state.sSTOP_609  ; ena             ; ena         ; 1.000        ; 2.733      ; 1.891      ;
+; 1.467  ; ena              ; state.sREAD_681  ; ena             ; ena         ; 1.000        ; 2.750      ; 1.891      ;
+; 1.535  ; state.sIDLE_729  ; state.sSTART_801 ; ena             ; ena         ; 1.000        ; 1.462      ; 0.528      ;
+; 1.612  ; state.sIDLE_729  ; state.sSTART_801 ; state.sACK1_777 ; ena         ; 1.000        ; 1.539      ; 0.528      ;
++--------+------------------+------------------+-----------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'ena'                                                                                                ;
++--------+------------------+------------------+-----------------+-------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node          ; Launch Clock    ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------------+-----------------+-------------+--------------+------------+------------+
+; -1.011 ; state.sIDLE_729  ; state.sSTART_801 ; state.sACK1_777 ; ena         ; 0.000        ; 1.539      ; 0.528      ;
+; -0.934 ; state.sIDLE_729  ; state.sSTART_801 ; ena             ; ena         ; 0.000        ; 1.462      ; 0.528      ;
+; -0.859 ; ena              ; state.sREAD_681  ; ena             ; ena         ; 0.000        ; 2.750      ; 1.891      ;
+; -0.842 ; ena              ; state.sSTOP_609  ; ena             ; ena         ; 0.000        ; 2.733      ; 1.891      ;
+; -0.832 ; ena              ; state.sWRITE_705 ; ena             ; ena         ; 0.000        ; 2.749      ; 1.917      ;
+; -0.807 ; ena              ; state.sSTART_801 ; ena             ; ena         ; 0.000        ; 2.750      ; 1.943      ;
+; -0.359 ; ena              ; state.sREAD_681  ; ena             ; ena         ; -0.500       ; 2.750      ; 1.891      ;
+; -0.342 ; ena              ; state.sSTOP_609  ; ena             ; ena         ; -0.500       ; 2.733      ; 1.891      ;
+; -0.332 ; ena              ; state.sWRITE_705 ; ena             ; ena         ; -0.500       ; 2.749      ; 1.917      ;
+; -0.307 ; ena              ; state.sSTART_801 ; ena             ; ena         ; -0.500       ; 2.750      ; 1.943      ;
+; -0.036 ; state_ena        ; state.sSTART_801 ; clk             ; ena         ; -0.500       ; 1.188      ; 0.652      ;
+; 0.005  ; state_ena        ; state.sREAD_681  ; clk             ; ena         ; -0.500       ; 1.188      ; 0.693      ;
+; 0.014  ; state_ena        ; state.sWRITE_705 ; clk             ; ena         ; -0.500       ; 1.187      ; 0.701      ;
+; 0.026  ; state_ena        ; state.sSTOP_609  ; clk             ; ena         ; -0.500       ; 1.171      ; 0.697      ;
+; 0.217  ; state.sSTART_801 ; state.sADDR_657  ; state.sACK1_777 ; ena         ; 0.000        ; 0.012      ; 0.229      ;
+; 0.285  ; state.sADDR_657  ; state.sACK1_777  ; state.sACK1_777 ; ena         ; 0.000        ; 0.092      ; 0.377      ;
+; 0.294  ; state.sSTART_801 ; state.sADDR_657  ; ena             ; ena         ; 0.000        ; -0.065     ; 0.229      ;
+; 0.362  ; state.sADDR_657  ; state.sACK1_777  ; ena             ; ena         ; 0.000        ; 0.015      ; 0.377      ;
+; 0.446  ; state.sREAD_681  ; state.sMACK_633  ; state.sACK1_777 ; ena         ; 0.000        ; 0.027      ; 0.473      ;
+; 0.459  ; state.sWRITE_705 ; state.sACK2_753  ; state.sACK1_777 ; ena         ; 0.000        ; 0.028      ; 0.487      ;
+; 0.523  ; state.sREAD_681  ; state.sMACK_633  ; ena             ; ena         ; 0.000        ; -0.050     ; 0.473      ;
+; 0.536  ; state.sWRITE_705 ; state.sACK2_753  ; ena             ; ena         ; 0.000        ; -0.049     ; 0.487      ;
+; 0.584  ; state.sMACK_633  ; state.sREAD_681  ; state.sACK1_777 ; ena         ; 0.000        ; 0.127      ; 0.711      ;
+; 0.593  ; state.sMACK_633  ; state.sSTART_801 ; state.sACK1_777 ; ena         ; 0.000        ; 0.127      ; 0.720      ;
+; 0.604  ; state.sMACK_633  ; state.sSTOP_609  ; state.sACK1_777 ; ena         ; 0.000        ; 0.110      ; 0.714      ;
+; 0.661  ; state.sMACK_633  ; state.sREAD_681  ; ena             ; ena         ; 0.000        ; 0.050      ; 0.711      ;
+; 0.670  ; state.sMACK_633  ; state.sSTART_801 ; ena             ; ena         ; 0.000        ; 0.050      ; 0.720      ;
+; 0.681  ; state.sMACK_633  ; state.sSTOP_609  ; ena             ; ena         ; 0.000        ; 0.033      ; 0.714      ;
+; 0.703  ; state.sACK2_753  ; state.sSTART_801 ; state.sACK1_777 ; ena         ; 0.000        ; 0.127      ; 0.830      ;
+; 0.710  ; state.sACK2_753  ; state.sWRITE_705 ; state.sACK1_777 ; ena         ; 0.000        ; 0.126      ; 0.836      ;
+; 0.718  ; state.sACK2_753  ; state.sSTOP_609  ; state.sACK1_777 ; ena         ; 0.000        ; 0.110      ; 0.828      ;
+; 0.780  ; state.sACK2_753  ; state.sSTART_801 ; ena             ; ena         ; 0.000        ; 0.050      ; 0.830      ;
+; 0.787  ; state.sACK2_753  ; state.sWRITE_705 ; ena             ; ena         ; 0.000        ; 0.049      ; 0.836      ;
+; 0.795  ; state.sACK2_753  ; state.sSTOP_609  ; ena             ; ena         ; 0.000        ; 0.033      ; 0.828      ;
+; 1.550  ; state.sSTOP_609  ; state.sIDLE_729  ; state.sACK1_777 ; ena         ; 0.000        ; -1.368     ; 0.182      ;
+; 1.627  ; state.sSTOP_609  ; state.sIDLE_729  ; ena             ; ena         ; 0.000        ; -1.445     ; 0.182      ;
++--------+------------------+------------------+-----------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'state.sACK1_777'                                                                                        ;
++--------+------------------+------------------+-----------------+-----------------+--------------+------------+------------+
+; Slack  ; From Node        ; To Node          ; Launch Clock    ; Latch Clock     ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------+------------------+-----------------+-----------------+--------------+------------+------------+
+; -0.934 ; state.sIDLE_729  ; state.sSTART_801 ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 1.462      ; 0.528      ;
+; -0.857 ; state.sIDLE_729  ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 0.000        ; 1.385      ; 0.528      ;
+; -0.782 ; ena              ; state.sREAD_681  ; ena             ; state.sACK1_777 ; 0.000        ; 2.673      ; 1.891      ;
+; -0.765 ; ena              ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; 0.000        ; 2.656      ; 1.891      ;
+; -0.755 ; ena              ; state.sWRITE_705 ; ena             ; state.sACK1_777 ; 0.000        ; 2.672      ; 1.917      ;
+; -0.730 ; ena              ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 0.000        ; 2.673      ; 1.943      ;
+; -0.282 ; ena              ; state.sREAD_681  ; ena             ; state.sACK1_777 ; -0.500       ; 2.673      ; 1.891      ;
+; -0.265 ; ena              ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; -0.500       ; 2.656      ; 1.891      ;
+; -0.255 ; ena              ; state.sWRITE_705 ; ena             ; state.sACK1_777 ; -0.500       ; 2.672      ; 1.917      ;
+; -0.230 ; ena              ; state.sSTART_801 ; ena             ; state.sACK1_777 ; -0.500       ; 2.673      ; 1.943      ;
+; 0.041  ; state_ena        ; state.sSTART_801 ; clk             ; state.sACK1_777 ; -0.500       ; 1.111      ; 0.652      ;
+; 0.082  ; state_ena        ; state.sREAD_681  ; clk             ; state.sACK1_777 ; -0.500       ; 1.111      ; 0.693      ;
+; 0.091  ; state_ena        ; state.sWRITE_705 ; clk             ; state.sACK1_777 ; -0.500       ; 1.110      ; 0.701      ;
+; 0.092  ; state.sACK1_777  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.648      ; 0.740      ;
+; 0.101  ; state.sACK1_777  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.650      ; 0.751      ;
+; 0.103  ; state_ena        ; state.sSTOP_609  ; clk             ; state.sACK1_777 ; -0.500       ; 1.094      ; 0.697      ;
+; 0.294  ; state.sSTART_801 ; state.sADDR_657  ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; -0.065     ; 0.229      ;
+; 0.371  ; state.sSTART_801 ; state.sADDR_657  ; ena             ; state.sACK1_777 ; 0.000        ; -0.142     ; 0.229      ;
+; 0.459  ; bit_count[2]     ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.000      ; 0.459      ;
+; 0.468  ; bit_count[1]     ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; -0.002     ; 0.466      ;
+; 0.483  ; bit_count[1]     ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.000      ; 0.483      ;
+; 0.523  ; state.sREAD_681  ; state.sMACK_633  ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; -0.050     ; 0.473      ;
+; 0.536  ; state.sWRITE_705 ; state.sACK2_753  ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; -0.049     ; 0.487      ;
+; 0.592  ; state.sACK1_777  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; 0.648      ; 0.740      ;
+; 0.600  ; state.sREAD_681  ; state.sMACK_633  ; ena             ; state.sACK1_777 ; 0.000        ; -0.127     ; 0.473      ;
+; 0.601  ; state.sACK1_777  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; 0.650      ; 0.751      ;
+; 0.613  ; state.sWRITE_705 ; state.sACK2_753  ; ena             ; state.sACK1_777 ; 0.000        ; -0.126     ; 0.487      ;
+; 0.661  ; state.sMACK_633  ; state.sREAD_681  ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.050      ; 0.711      ;
+; 0.670  ; state.sMACK_633  ; state.sSTART_801 ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.050      ; 0.720      ;
+; 0.681  ; state.sMACK_633  ; state.sSTOP_609  ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.033      ; 0.714      ;
+; 0.738  ; state.sMACK_633  ; state.sREAD_681  ; ena             ; state.sACK1_777 ; 0.000        ; -0.027     ; 0.711      ;
+; 0.747  ; state.sMACK_633  ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 0.000        ; -0.027     ; 0.720      ;
+; 0.758  ; state.sMACK_633  ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; 0.000        ; -0.044     ; 0.714      ;
+; 0.780  ; state.sACK2_753  ; state.sSTART_801 ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.050      ; 0.830      ;
+; 0.787  ; state.sACK2_753  ; state.sWRITE_705 ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.049      ; 0.836      ;
+; 0.795  ; state.sACK2_753  ; state.sSTOP_609  ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; 0.033      ; 0.828      ;
+; 0.857  ; state.sACK2_753  ; state.sSTART_801 ; ena             ; state.sACK1_777 ; 0.000        ; -0.027     ; 0.830      ;
+; 0.864  ; state.sACK2_753  ; state.sWRITE_705 ; ena             ; state.sACK1_777 ; 0.000        ; -0.028     ; 0.836      ;
+; 0.872  ; state.sACK2_753  ; state.sSTOP_609  ; ena             ; state.sACK1_777 ; 0.000        ; -0.044     ; 0.828      ;
+; 1.627  ; state.sSTOP_609  ; state.sIDLE_729  ; state.sACK1_777 ; state.sACK1_777 ; 0.000        ; -1.445     ; 0.182      ;
+; 1.704  ; state.sSTOP_609  ; state.sIDLE_729  ; ena             ; state.sACK1_777 ; 0.000        ; -1.522     ; 0.182      ;
+; 1.964  ; state.sIDLE_729  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -0.563     ; 0.901      ;
+; 1.973  ; state.sIDLE_729  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -0.561     ; 0.912      ;
+; 2.041  ; state.sIDLE_729  ; bit_count[2]     ; ena             ; state.sACK1_777 ; -0.500       ; -0.640     ; 0.901      ;
+; 2.050  ; state.sIDLE_729  ; bit_count[1]     ; ena             ; state.sACK1_777 ; -0.500       ; -0.638     ; 0.912      ;
+; 3.149  ; state.sSTOP_609  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -2.008     ; 0.641      ;
+; 3.155  ; state.sSTART_801 ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -2.025     ; 0.630      ;
+; 3.158  ; state.sSTOP_609  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -2.006     ; 0.652      ;
+; 3.164  ; state.sSTART_801 ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -2.023     ; 0.641      ;
+; 3.177  ; state.sMACK_633  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -1.975     ; 0.702      ;
+; 3.186  ; state.sMACK_633  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -1.973     ; 0.713      ;
+; 3.226  ; state.sSTOP_609  ; bit_count[2]     ; ena             ; state.sACK1_777 ; -0.500       ; -2.085     ; 0.641      ;
+; 3.232  ; state.sSTART_801 ; bit_count[2]     ; ena             ; state.sACK1_777 ; -0.500       ; -2.102     ; 0.630      ;
+; 3.235  ; state.sSTOP_609  ; bit_count[1]     ; ena             ; state.sACK1_777 ; -0.500       ; -2.083     ; 0.652      ;
+; 3.241  ; state.sSTART_801 ; bit_count[1]     ; ena             ; state.sACK1_777 ; -0.500       ; -2.100     ; 0.641      ;
+; 3.254  ; state.sMACK_633  ; bit_count[2]     ; ena             ; state.sACK1_777 ; -0.500       ; -2.052     ; 0.702      ;
+; 3.263  ; state.sMACK_633  ; bit_count[1]     ; ena             ; state.sACK1_777 ; -0.500       ; -2.050     ; 0.713      ;
+; 3.304  ; state.sACK2_753  ; bit_count[2]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -1.975     ; 0.829      ;
+; 3.313  ; state.sACK2_753  ; bit_count[1]     ; state.sACK1_777 ; state.sACK1_777 ; -0.500       ; -1.973     ; 0.840      ;
+; 3.381  ; state.sACK2_753  ; bit_count[2]     ; ena             ; state.sACK1_777 ; -0.500       ; -2.052     ; 0.829      ;
+; 3.390  ; state.sACK2_753  ; bit_count[1]     ; ena             ; state.sACK1_777 ; -0.500       ; -2.050     ; 0.840      ;
++--------+------------------+------------------+-----------------+-----------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                      ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node             ; To Node               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+; 0.241 ; \clk_proc:counter[31] ; \clk_proc:counter[31] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.353 ; \clk_proc:counter[16] ; \clk_proc:counter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.505      ;
+; 0.354 ; \clk_proc:counter[7]  ; \clk_proc:counter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.506      ;
+; 0.357 ; \clk_proc:counter[1]  ; \clk_proc:counter[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.509      ;
+; 0.357 ; \clk_proc:counter[17] ; \clk_proc:counter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.509      ;
+; 0.358 ; \clk_proc:counter[0]  ; \clk_proc:counter[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; \clk_proc:counter[25] ; \clk_proc:counter[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; \clk_proc:counter[27] ; \clk_proc:counter[27] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; \clk_proc:counter[18] ; \clk_proc:counter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; \clk_proc:counter[9]  ; \clk_proc:counter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; \clk_proc:counter[11] ; \clk_proc:counter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; \clk_proc:counter[29] ; \clk_proc:counter[29] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; \clk_proc:counter[30] ; \clk_proc:counter[30] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; \clk_proc:counter[20] ; \clk_proc:counter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; \clk_proc:counter[23] ; \clk_proc:counter[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; \clk_proc:counter[13] ; \clk_proc:counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; \clk_proc:counter[14] ; \clk_proc:counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; \clk_proc:counter[15] ; \clk_proc:counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.369 ; \clk_proc:counter[26] ; \clk_proc:counter[26] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; \clk_proc:counter[19] ; \clk_proc:counter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; \clk_proc:counter[8]  ; \clk_proc:counter[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; \clk_proc:counter[10] ; \clk_proc:counter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; \clk_proc:counter[24] ; \clk_proc:counter[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370 ; \clk_proc:counter[28] ; \clk_proc:counter[28] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; \clk_proc:counter[21] ; \clk_proc:counter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; \clk_proc:counter[22] ; \clk_proc:counter[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; \clk_proc:counter[12] ; \clk_proc:counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.491 ; \clk_proc:counter[16] ; \clk_proc:counter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.643      ;
+; 0.495 ; \clk_proc:counter[17] ; \clk_proc:counter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.647      ;
+; 0.496 ; \clk_proc:counter[0]  ; \clk_proc:counter[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; \clk_proc:counter[25] ; \clk_proc:counter[26] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; \clk_proc:counter[18] ; \clk_proc:counter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; \clk_proc:counter[9]  ; \clk_proc:counter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; \clk_proc:counter[27] ; \clk_proc:counter[28] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; \clk_proc:counter[11] ; \clk_proc:counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.497 ; \clk_proc:counter[30] ; \clk_proc:counter[31] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497 ; \clk_proc:counter[29] ; \clk_proc:counter[30] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497 ; \clk_proc:counter[13] ; \clk_proc:counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497 ; \clk_proc:counter[14] ; \clk_proc:counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497 ; \clk_proc:counter[20] ; \clk_proc:counter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.649      ;
+; 0.509 ; \clk_proc:counter[24] ; \clk_proc:counter[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509 ; \clk_proc:counter[26] ; \clk_proc:counter[27] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509 ; \clk_proc:counter[8]  ; \clk_proc:counter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509 ; \clk_proc:counter[10] ; \clk_proc:counter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509 ; \clk_proc:counter[19] ; \clk_proc:counter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.661      ;
+; 0.510 ; \clk_proc:counter[28] ; \clk_proc:counter[29] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.662      ;
+; 0.510 ; \clk_proc:counter[22] ; \clk_proc:counter[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.662      ;
+; 0.510 ; \clk_proc:counter[12] ; \clk_proc:counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.662      ;
+; 0.510 ; \clk_proc:counter[21] ; \clk_proc:counter[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.662      ;
+; 0.526 ; \clk_proc:counter[16] ; \clk_proc:counter[18] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.678      ;
+; 0.530 ; \clk_proc:counter[17] ; \clk_proc:counter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.682      ;
+; 0.531 ; \clk_proc:counter[25] ; \clk_proc:counter[27] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; \clk_proc:counter[9]  ; \clk_proc:counter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; \clk_proc:counter[18] ; \clk_proc:counter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; \clk_proc:counter[27] ; \clk_proc:counter[29] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; \clk_proc:counter[11] ; \clk_proc:counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.683      ;
+; 0.532 ; \clk_proc:counter[29] ; \clk_proc:counter[31] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.684      ;
+; 0.532 ; \clk_proc:counter[13] ; \clk_proc:counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.684      ;
+; 0.532 ; \clk_proc:counter[20] ; \clk_proc:counter[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.684      ;
+; 0.537 ; \clk_proc:counter[15] ; \clk_proc:counter[16] ; clk          ; clk         ; 0.000        ; 0.007      ; 0.696      ;
+; 0.544 ; \clk_proc:counter[24] ; \clk_proc:counter[26] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544 ; \clk_proc:counter[8]  ; \clk_proc:counter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544 ; \clk_proc:counter[26] ; \clk_proc:counter[28] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544 ; \clk_proc:counter[10] ; \clk_proc:counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544 ; \clk_proc:counter[19] ; \clk_proc:counter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.696      ;
+; 0.545 ; \clk_proc:counter[28] ; \clk_proc:counter[30] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.697      ;
+; 0.545 ; \clk_proc:counter[12] ; \clk_proc:counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.697      ;
+; 0.545 ; \clk_proc:counter[21] ; \clk_proc:counter[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.697      ;
+; 0.547 ; \clk_proc:counter[7]  ; \clk_proc:counter[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.699      ;
+; 0.552 ; \clk_proc:counter[23] ; \clk_proc:counter[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.704      ;
+; 0.561 ; \clk_proc:counter[16] ; \clk_proc:counter[19] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.713      ;
+; 0.565 ; \clk_proc:counter[17] ; \clk_proc:counter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.717      ;
+; 0.566 ; \clk_proc:counter[25] ; \clk_proc:counter[28] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.718      ;
+; 0.566 ; \clk_proc:counter[9]  ; \clk_proc:counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.718      ;
+; 0.566 ; \clk_proc:counter[18] ; \clk_proc:counter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.718      ;
+; 0.566 ; \clk_proc:counter[27] ; \clk_proc:counter[30] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.718      ;
+; 0.566 ; \clk_proc:counter[11] ; \clk_proc:counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.718      ;
+; 0.567 ; \clk_proc:counter[20] ; \clk_proc:counter[23] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.719      ;
+; 0.572 ; \clk_proc:counter[15] ; \clk_proc:counter[17] ; clk          ; clk         ; 0.000        ; 0.007      ; 0.731      ;
+; 0.575 ; \clk_proc:counter[6]  ; \clk_proc:counter[7]  ; clk          ; clk         ; 0.000        ; 0.003      ; 0.730      ;
+; 0.577 ; \clk_proc:counter[14] ; \clk_proc:counter[16] ; clk          ; clk         ; 0.000        ; 0.007      ; 0.736      ;
+; 0.579 ; \clk_proc:counter[24] ; \clk_proc:counter[27] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.579 ; \clk_proc:counter[8]  ; \clk_proc:counter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.579 ; \clk_proc:counter[26] ; \clk_proc:counter[29] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.579 ; \clk_proc:counter[10] ; \clk_proc:counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.579 ; \clk_proc:counter[19] ; \clk_proc:counter[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.580 ; \clk_proc:counter[28] ; \clk_proc:counter[31] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.732      ;
+; 0.580 ; \clk_proc:counter[12] ; \clk_proc:counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.732      ;
+; 0.582 ; \clk_proc:counter[7]  ; \clk_proc:counter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.734      ;
+; 0.587 ; \clk_proc:counter[23] ; \clk_proc:counter[25] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.739      ;
+; 0.596 ; \clk_proc:counter[16] ; \clk_proc:counter[20] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.748      ;
+; 0.600 ; \clk_proc:counter[17] ; \clk_proc:counter[21] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.752      ;
+; 0.601 ; \clk_proc:counter[25] ; \clk_proc:counter[29] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.753      ;
+; 0.601 ; \clk_proc:counter[9]  ; \clk_proc:counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.753      ;
+; 0.601 ; \clk_proc:counter[18] ; \clk_proc:counter[22] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.753      ;
+; 0.601 ; \clk_proc:counter[27] ; \clk_proc:counter[31] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.753      ;
+; 0.601 ; \clk_proc:counter[11] ; \clk_proc:counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.753      ;
+; 0.604 ; \clk_proc:counter[22] ; \clk_proc:counter[24] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.756      ;
+; 0.607 ; \clk_proc:counter[15] ; \clk_proc:counter[18] ; clk          ; clk         ; 0.000        ; 0.007      ; 0.766      ;
+; 0.612 ; \clk_proc:counter[14] ; \clk_proc:counter[17] ; clk          ; clk         ; 0.000        ; 0.007      ; 0.771      ;
++-------+-----------------------+-----------------------+--------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[0]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[10]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[10]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[11]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[11]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[12]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[12]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[13]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[13]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[14]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[14]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[15]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[15]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[16]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[16]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[17]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[17]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[18]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[18]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[19]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[19]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[1]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[20]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[20]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[21]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[21]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[22]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[22]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[23]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[23]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[24]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[24]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[25]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[25]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[26]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[26]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[27]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[27]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[28]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[28]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[29]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[29]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[2]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[30]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[30]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[31]     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[31]     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[3]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[4]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[5]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[6]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[7]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[8]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[8]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[9]      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[9]      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state_ena                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state_ena                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[0]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[10]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[10]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[11]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[11]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[12]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[12]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[13]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[13]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[14]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[14]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[15]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[15]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[16]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[16]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[17]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[17]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[18]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[18]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[19]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[19]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[1]|clk  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[20]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[20]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[21]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[21]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[22]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[22]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[23]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; \clk_proc:counter[23]|clk ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; \clk_proc:counter[24]|clk ;
++--------+--------------+----------------+------------------+-------+------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'ena'                                                                        ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+; -1.222 ; 1.000        ; 2.222          ; Port Rate        ; ena   ; Rise       ; ena                         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; Selector8~2|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; Selector8~2|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; Selector8~2|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; Selector8~2|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; Selector8~3clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; Selector8~3clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; Selector8~3clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; Selector8~3clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; Selector8~3|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; Selector8~3|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; Selector8~3|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; Selector8~3|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; ena|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; ena|combout                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sACK1_777             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sACK1_777             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sACK1_777|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sACK1_777|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sACK2_753             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sACK2_753             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sACK2_753|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sACK2_753|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sADDR_657             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sADDR_657             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sADDR_657|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sADDR_657|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sIDLE_729             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sIDLE_729             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sIDLE_729|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sIDLE_729|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sMACK_633             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sMACK_633             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sMACK_633|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sMACK_633|datad       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sREAD_681             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sREAD_681             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sREAD_681|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sREAD_681|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sSTART_801            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sSTART_801            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sSTART_801|datac      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sSTART_801|datac      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sSTOP_609             ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sSTOP_609             ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sSTOP_609|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sSTOP_609|datac       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Fall       ; state.sWRITE_705            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Fall       ; state.sWRITE_705            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; ena   ; Rise       ; state.sWRITE_705|datac      ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; ena   ; Rise       ; state.sWRITE_705|datac      ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'state.sACK1_777'                                                                     ;
++-------+--------------+----------------+------------------+-----------------+------------+-----------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock           ; Clock Edge ; Target                      ;
++-------+--------------+----------------+------------------+-----------------+------------+-----------------------------+
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; Selector8~1|combout         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; Selector8~1|combout         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; Selector8~1|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; Selector8~1|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; Selector8~3clkctrl|inclk[0] ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; Selector8~3clkctrl|inclk[0] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; Selector8~3clkctrl|outclk   ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; Selector8~3clkctrl|outclk   ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; Selector8~3|combout         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; Selector8~3|combout         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; Selector8~3|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; Selector8~3|datab           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; WideOr0~0|combout           ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; WideOr0~0|combout           ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; WideOr0~0|datac             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; WideOr0~0|datac             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; WideOr1|combout             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; WideOr1|combout             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; WideOr1|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; WideOr1|datad               ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; bit_count[0]~4|combout      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; bit_count[0]~4|combout      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; bit_count[0]~4|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; bit_count[0]~4|datad        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; bit_count[1]                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; bit_count[1]                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; bit_count[1]|datac          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; bit_count[1]|datac          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; bit_count[2]                ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; bit_count[2]                ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; bit_count[2]|datac          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; bit_count[2]|datac          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sACK1_777|combout     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sACK1_777|combout     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sACK1_777|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sACK1_777|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sACK2_753             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sACK2_753             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sACK2_753|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sACK2_753|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sADDR_657             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sADDR_657             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sADDR_657|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sADDR_657|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sIDLE_729             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sIDLE_729             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sIDLE_729|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sIDLE_729|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sMACK_633             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sMACK_633             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sMACK_633|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sMACK_633|datad       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sREAD_681             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sREAD_681             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sREAD_681|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sREAD_681|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sSTART_801            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sSTART_801            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sSTART_801|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sSTART_801|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sSTOP_609             ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sSTOP_609             ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sSTOP_609|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sSTOP_609|datac       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Fall       ; state.sWRITE_705            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Fall       ; state.sWRITE_705            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; state.sACK1_777 ; Rise       ; state.sWRITE_705|datac      ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; state.sACK1_777 ; Rise       ; state.sWRITE_705|datac      ;
++-------+--------------+----------------+------------------+-----------------+------------+-----------------------------+
+
+
++------------------------------------------------------------------------------+
+; Setup Times                                                                  ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; ena       ; ena             ; -0.408 ; -0.408 ; Fall       ; ena             ;
+; rnw       ; ena             ; 1.452  ; 1.452  ; Fall       ; ena             ;
+; ena       ; state.sACK1_777 ; -0.331 ; -0.331 ; Fall       ; state.sACK1_777 ;
+; rnw       ; state.sACK1_777 ; 1.529  ; 1.529  ; Fall       ; state.sACK1_777 ;
++-----------+-----------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; ena       ; ena             ; 0.859  ; 0.859  ; Fall       ; ena             ;
+; rnw       ; ena             ; -0.982 ; -0.982 ; Fall       ; ena             ;
+; ena       ; state.sACK1_777 ; 0.782  ; 0.782  ; Fall       ; state.sACK1_777 ;
+; rnw       ; state.sACK1_777 ; -1.059 ; -1.059 ; Fall       ; state.sACK1_777 ;
++-----------+-----------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; busy      ; ena             ; 4.653 ; 4.653 ; Fall       ; ena             ;
+; busy      ; state.sACK1_777 ;       ; 1.864 ; Rise       ; state.sACK1_777 ;
+; busy      ; state.sACK1_777 ; 4.576 ; 4.576 ; Fall       ; state.sACK1_777 ;
++-----------+-----------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; busy      ; ena             ; 3.313 ; 3.313 ; Fall       ; ena             ;
+; busy      ; state.sACK1_777 ;       ; 1.864 ; Rise       ; state.sACK1_777 ;
+; busy      ; state.sACK1_777 ; 1.864 ; 3.236 ; Fall       ; state.sACK1_777 ;
++-----------+-----------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                              ;
++------------------+----------+---------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold    ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+---------+----------+---------+---------------------+
+; Worst-case Slack ; -6.058   ; -1.547  ; N/A      ; N/A     ; -1.380              ;
+;  clk             ; -4.692   ; 0.241   ; N/A      ; N/A     ; -1.380              ;
+;  ena             ; -2.988   ; -1.368  ; N/A      ; N/A     ; -1.222              ;
+;  state.sACK1_777 ; -6.058   ; -1.547  ; N/A      ; N/A     ; 0.500               ;
+; Design-wide TNS  ; -114.663 ; -11.416 ; 0.0      ; 0.0     ; -35.602             ;
+;  clk             ; -75.630  ; 0.000   ; N/A      ; N/A     ; -34.380             ;
+;  ena             ; -14.555  ; -5.350  ; N/A      ; N/A     ; -1.222              ;
+;  state.sACK1_777 ; -24.478  ; -6.066  ; N/A      ; N/A     ; 0.000               ;
++------------------+----------+---------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------+
+; Setup Times                                                                  ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; ena       ; ena             ; -0.322 ; -0.322 ; Fall       ; ena             ;
+; rnw       ; ena             ; 2.667  ; 2.667  ; Fall       ; ena             ;
+; ena       ; state.sACK1_777 ; -0.331 ; -0.331 ; Fall       ; state.sACK1_777 ;
+; rnw       ; state.sACK1_777 ; 2.488  ; 2.488  ; Fall       ; state.sACK1_777 ;
++-----------+-----------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+-----------------+--------+--------+------------+-----------------+
+; ena       ; ena             ; 1.368  ; 1.368  ; Fall       ; ena             ;
+; rnw       ; ena             ; -0.982 ; -0.982 ; Fall       ; ena             ;
+; ena       ; state.sACK1_777 ; 1.547  ; 1.547  ; Fall       ; state.sACK1_777 ;
+; rnw       ; state.sACK1_777 ; -1.059 ; -1.059 ; Fall       ; state.sACK1_777 ;
++-----------+-----------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Clock to Output Times                                                      ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; busy      ; ena             ; 8.749 ; 8.749 ; Fall       ; ena             ;
+; busy      ; state.sACK1_777 ;       ; 3.658 ; Rise       ; state.sACK1_777 ;
+; busy      ; state.sACK1_777 ; 8.928 ; 8.928 ; Fall       ; state.sACK1_777 ;
++-----------+-----------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                              ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port      ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+-----------------+-------+-------+------------+-----------------+
+; busy      ; ena             ; 3.313 ; 3.313 ; Fall       ; ena             ;
+; busy      ; state.sACK1_777 ;       ; 1.864 ; Rise       ; state.sACK1_777 ;
+; busy      ; state.sACK1_777 ; 1.864 ; 3.236 ; Fall       ; state.sACK1_777 ;
++-----------+-----------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Setup Transfers                                                               ;
++-----------------+-----------------+----------+----------+----------+----------+
+; From Clock      ; To Clock        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------+-----------------+----------+----------+----------+----------+
+; clk             ; clk             ; 3696     ; 0        ; 0        ; 0        ;
+; clk             ; ena             ; 0        ; 0        ; 5        ; 0        ;
+; ena             ; ena             ; 0        ; 0        ; 4        ; 16       ;
+; state.sACK1_777 ; ena             ; 0        ; 0        ; 0        ; 12       ;
+; clk             ; state.sACK1_777 ; 0        ; 0        ; 5        ; 0        ;
+; ena             ; state.sACK1_777 ; 0        ; 10       ; 4        ; 15       ;
+; state.sACK1_777 ; state.sACK1_777 ; 5        ; 12       ; 0        ; 11       ;
++-----------------+-----------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------------+
+; Hold Transfers                                                                ;
++-----------------+-----------------+----------+----------+----------+----------+
+; From Clock      ; To Clock        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-----------------+-----------------+----------+----------+----------+----------+
+; clk             ; clk             ; 3696     ; 0        ; 0        ; 0        ;
+; clk             ; ena             ; 0        ; 0        ; 5        ; 0        ;
+; ena             ; ena             ; 0        ; 0        ; 4        ; 16       ;
+; state.sACK1_777 ; ena             ; 0        ; 0        ; 0        ; 12       ;
+; clk             ; state.sACK1_777 ; 0        ; 0        ; 5        ; 0        ;
+; ena             ; state.sACK1_777 ; 0        ; 10       ; 4        ; 15       ;
+; state.sACK1_777 ; state.sACK1_777 ; 5        ; 12       ; 0        ; 11       ;
++-----------------+-----------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 3     ; 3    ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 4     ; 4    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Oct 09 15:58:38 2013
+Info: Command: quartus_sta i2cmaster -c i2cmaster
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 11 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'i2cmaster.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name ena ena
+    Info (332105): create_clock -period 1.000 -name state.sACK1_777 state.sACK1_777
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "bit_count[0]~4|combout"
+    Warning (332126): Node "bit_count[0]~4|dataa"
+Warning (332191): Clock target state.sACK1_777 of clock state.sACK1_777 is fed by another target of the same clock.
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: bit_count[0]~4  from: datad  to: combout
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -6.058
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -6.058       -24.478 state.sACK1_777 
+    Info (332119):    -4.692       -75.630 clk 
+    Info (332119):    -2.988       -14.555 ena 
+Info (332146): Worst-case hold slack is -1.547
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.547        -6.066 state.sACK1_777 
+    Info (332119):    -1.368        -5.350 ena 
+    Info (332119):     0.524         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -34.380 clk 
+    Info (332119):    -1.222        -1.222 ena 
+    Info (332119):     0.500         0.000 state.sACK1_777 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Warning (332191): Clock target state.sACK1_777 of clock state.sACK1_777 is fed by another target of the same clock.
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: bit_count[0]~4  from: datad  to: combout
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.813
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.813        -7.635 state.sACK1_777 
+    Info (332119):    -1.874       -19.468 clk 
+    Info (332119):    -1.036        -1.654 ena 
+Info (332146): Worst-case hold slack is -1.011
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.011        -3.544 ena 
+    Info (332119):    -0.934        -3.236 state.sACK1_777 
+    Info (332119):     0.241         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -34.380 clk 
+    Info (332119):    -1.222        -1.222 ena 
+    Info (332119):     0.500         0.000 state.sACK1_777 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 281 megabytes
+    Info: Processing ended: Wed Oct 09 15:58:43 2013
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:02
+
+

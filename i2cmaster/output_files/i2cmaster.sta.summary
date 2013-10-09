@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'state.sACK1_777'
+Slack : -6.058
+TNS   : -24.478
+
+Type  : Slow Model Setup 'clk'
+Slack : -4.692
+TNS   : -75.630
+
+Type  : Slow Model Setup 'ena'
+Slack : -2.988
+TNS   : -14.555
+
+Type  : Slow Model Hold 'state.sACK1_777'
+Slack : -1.547
+TNS   : -6.066
+
+Type  : Slow Model Hold 'ena'
+Slack : -1.368
+TNS   : -5.350
+
+Type  : Slow Model Hold 'clk'
+Slack : 0.524
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'clk'
+Slack : -1.380
+TNS   : -34.380
+
+Type  : Slow Model Minimum Pulse Width 'ena'
+Slack : -1.222
+TNS   : -1.222
+
+Type  : Slow Model Minimum Pulse Width 'state.sACK1_777'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'state.sACK1_777'
+Slack : -2.813
+TNS   : -7.635
+
+Type  : Fast Model Setup 'clk'
+Slack : -1.874
+TNS   : -19.468
+
+Type  : Fast Model Setup 'ena'
+Slack : -1.036
+TNS   : -1.654
+
+Type  : Fast Model Hold 'ena'
+Slack : -1.011
+TNS   : -3.544
+
+Type  : Fast Model Hold 'state.sACK1_777'
+Slack : -0.934
+TNS   : -3.236
+
+Type  : Fast Model Hold 'clk'
+Slack : 0.241
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'clk'
+Slack : -1.380
+TNS   : -34.380
+
+Type  : Fast Model Minimum Pulse Width 'ena'
+Slack : -1.222
+TNS   : -1.222
+
+Type  : Fast Model Minimum Pulse Width 'state.sACK1_777'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

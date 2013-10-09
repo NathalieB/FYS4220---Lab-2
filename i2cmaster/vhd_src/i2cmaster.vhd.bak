@@ -1,0 +1,76 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity i2cmaster is
+type statetype is (start,idle,waiting,run) end type;
+
+generic (
+	system_clk	: integer := 20 ns;
+	bus_clk		: integer := 2500 ns
+);
+
+port
+(
+	clk 	 : in std_logic;
+	areset_n : in std_logic;
+	ena		 : in std_logic;
+	addr	 : in std_logic_vector(6 downto 0);
+	rnw		 : in std_logic;
+	data_wr	 : in std_logic_vector(7 downto 0);
+	data_rd	 : out std_logic_vector(7 downto 0);
+	busy	 : out std_logic;
+	ack_error: inout std_logic;
+	scl		 : inout std_logic
+);
+	end entity i2cmaster;
+	
+	architecture top_level of i2cmaster is
+	-- Internal signal declaration
+	signal state 		: 	statetype;
+	signal state_ena	:	std_logic;
+	signal scl_high_ena	:	std_logic;
+	signal scl_clk		:	std_logic;
+	signal scl_oe		:	std_logic;
+	signal ack_error_i	:	std_logic;
+	signal rnw_i		:	std_logic;	
+	signal sda_int		:	std_logic;
+	signal addr_rnw		:	std_logic_vector(7 downto 0);
+	signal data_tx		:	std_logic_vector(7 downto 0);
+	signal data_rx		:	std_logic_vector(7 downto 0);
+	signal bit_count	:	integer(7 downto 0);
+		
+	begin
+	
+	
+	
+	-- lab 1a: Assign all switches to LEDs
+	-- LEDR <= SW;
+	-- Part 2
+--	if rising_edge(clk) then
+--		if not ext_ena_n then
+--			counter <= counter + 1;
+--		end if;
+--	end if;
+		
+	--with SW(3 downto 0) select
+	--	HEX0 <= "1000000" when "0000", -- 0
+		--"1111001" when "0001", -- 1
+		--"0100100" when "0010", -- 2
+	--	"0110000" when "0011", -- 3
+	--	"0011001" when "0100", -- 4
+	--	"0010010" when "0101", -- 5
+	--	"0000010" when "0110", -- 6
+	--	"1111000" when "0111", -- 7
+	--	"0000000" when "1000", -- 8
+	--	"0010000" when "1001", -- 9
+	--	"0001000" when "1010", -- a
+	--	"0000011" when "1011", -- b
+	--	"1000110" when "1100", -- c
+	--	"0100001" when "1101", -- d
+	--	"0000110" when "1110", -- e
+	--	"0001110" when "1111", -- f
+	--	"1111111" when others;
+	
+	
+	end architecture top_level;

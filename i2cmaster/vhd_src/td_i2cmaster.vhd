@@ -1,0 +1,87 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity tb_i2cmaster is
+end;
+
+architecture testbench of tb_i2cmaster is
+
+Component i2cmaster
+	port
+	(
+		clk 		 : in std_logic;
+		areset_n	 : in std_logic;
+		ena		 : in std_logic;
+		addr		 : in std_logic_vector(6 downto 0);
+		rnw		 : in std_logic;
+		data_wr	 : in std_logic_vector(7 downto 0);
+		data_rd	 : out std_logic_vector(7 downto 0);
+		busy		 : out std_logic;
+		ack_error : inout std_logic;
+		sda 		 : inout std_logic;
+		scl		 : inout std_logic
+	);
+end component;
+
+		signal clk 			 : 	std_logic;
+		signal areset_n	 :  	std_logic;
+		signal ena			 :  	std_logic;
+		signal addr	 		 :  	std_logic_vector(6 downto 0);
+		signal rnw		 	 : 	std_logic;
+		signal data_wr	 	 : 	std_logic_vector(7 downto 0);
+		signal data_rd	 	 : 	std_logic_vector(7 downto 0);
+		signal busy		 	 : 	std_logic;
+		signal ack_error 	 : 	std_logic;
+		signal sda 	 		 : 	std_logic;
+		signal scl			 : 	std_logic;
+
+begin
+
+   UUT : i2cmaster
+	port map(
+			clk => clk,
+			areset_n => areset_n,
+			ena => ena,
+			addr => addr,
+			rnw => rnw,
+			data_wr => data_wr,
+			data_rd => data_rd,
+			busy => busy,
+			ack_error => ack_error,
+			sda => sda,
+			scl => scl
+	);
+
+	
+	-- process used to fix the temperature resolution
+	resolution_process : process
+	begin
+		addr <= "1001000";
+		rnw <= '0';
+		wait for 2500 ns;
+		addr <= "0000000";
+		rnw <= '1';
+		wait for 2500 ns;
+		addr <= "0110000";
+		rnw <= '0';
+		wait for 2500 ns;
+		
+	end process;
+	
+	-- process used to fixe the temperature register address
+	address_process : process
+	begin
+		addr <= "1001000";
+		rnw <= '1';
+		wait for 2500 ns;
+	end process;
+	
+	-- process used to read the value of the temperature register
+	read_process : process
+	begin
+		addr <= "1001000";
+		rnw <= '1'; -- 1 to read
+		wait for 2500 ns;
+	end process;
+end architecture testbench;

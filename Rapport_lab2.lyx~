@@ -119,19 +119,6 @@ SDA ( Serial Data Line ) .
 
 \begin_layout Standard
 It is a protocal based on the system of ACK/NACK ( Acknowledge or not ).
-\end_layout
-
-\begin_layout Section
-Writing of the VHD code
-\end_layout
-
-\begin_layout Standard
-The main point was here to translate the finite state machine into code
- as we said previously.
-\end_layout
-
-\begin_layout Standard
-To do so, we had to use signals and also generics.
  
 \end_layout
 
