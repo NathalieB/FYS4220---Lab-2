@@ -189,7 +189,7 @@ BEGIN
 		wait for 2*clock_period;
 
 
-		--fï¿½lle Transmit Register
+		--fülle Transmit Register
 		wb_adr_i <= "011";
 		wb_dat_i <= "10101010";
 		wb_we_i  <= '1';
@@ -234,5 +234,4 @@ BEGIN
 
    end process;
 
-	
 END;

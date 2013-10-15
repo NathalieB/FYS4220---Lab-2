@@ -1,4 +1,5 @@
 |i2cmaster
+clk => scl_clk.CLK
 clk => state_ena.CLK
 clk => \clk_proc:counter[0].CLK
 clk => \clk_proc:counter[1].CLK
@@ -34,24 +35,30 @@ clk => \clk_proc:counter[30].CLK
 clk => \clk_proc:counter[31].CLK
 areset_n => ~NO_FANOUT~
 ena => state_proc.IN1
-ena => state_proc.IN1
-addr[0] => ~NO_FANOUT~
-addr[1] => ~NO_FANOUT~
-addr[2] => ~NO_FANOUT~
-addr[3] => ~NO_FANOUT~
-addr[4] => ~NO_FANOUT~
-addr[5] => ~NO_FANOUT~
-addr[6] => ~NO_FANOUT~
+ena => output_proc.IN0
+ena => output_proc.IN0
+ena => Selector15.IN3
+ena => output_proc.IN1
+addr[0] => addr_rnw[1].DATAIN
+addr[1] => addr_rnw[2].DATAIN
+addr[2] => addr_rnw[3].DATAIN
+addr[3] => addr_rnw[4].DATAIN
+addr[4] => addr_rnw[5].DATAIN
+addr[5] => addr_rnw[6].DATAIN
+addr[6] => addr_rnw[7].DATAIN
 rnw => state_proc.IN1
+rnw => output_proc.IN1
+rnw => output_proc.IN1
 rnw => state_proc.IN1
-data_wr[0] => ~NO_FANOUT~
-data_wr[1] => ~NO_FANOUT~
-data_wr[2] => ~NO_FANOUT~
-data_wr[3] => ~NO_FANOUT~
-data_wr[4] => ~NO_FANOUT~
-data_wr[5] => ~NO_FANOUT~
-data_wr[6] => ~NO_FANOUT~
-data_wr[7] => ~NO_FANOUT~
+rnw => addr_rnw[0].DATAIN
+data_wr[0] => data_tx[0].DATAIN
+data_wr[1] => data_tx[1].DATAIN
+data_wr[2] => data_tx[2].DATAIN
+data_wr[3] => data_tx[3].DATAIN
+data_wr[4] => data_tx[4].DATAIN
+data_wr[5] => data_tx[5].DATAIN
+data_wr[6] => data_tx[6].DATAIN
+data_wr[7] => data_tx[7].DATAIN
 data_rd[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
 data_rd[1] <= data_rd[1].DB_MAX_OUTPUT_PORT_TYPE
 data_rd[2] <= data_rd[2].DB_MAX_OUTPUT_PORT_TYPE
@@ -62,7 +69,7 @@ data_rd[6] <= data_rd[6].DB_MAX_OUTPUT_PORT_TYPE
 data_rd[7] <= data_rd[7].DB_MAX_OUTPUT_PORT_TYPE
 busy <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 ack_error <> <UNC>
-sda <> <UNC>
-scl <> <UNC>
+sda <> sda
+scl <> scl
 
 

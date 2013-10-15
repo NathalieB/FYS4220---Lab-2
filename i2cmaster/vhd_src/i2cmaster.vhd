@@ -34,22 +34,22 @@ port
 	-- Internal signal declaration
 	
 	
-	signal state 		: 	statetype;
-	signal state_ena	:	std_logic;
-	signal scl_high_ena	:	std_logic;
-	signal scl_clk		:	std_logic;
-	signal scl_oe		:	std_logic;
-	signal ack_error_i:	std_logic;
-	signal rnw_i		:	std_logic;	
-	signal sda_int		:	std_logic;
-	signal addr_rnw	:	std_logic_vector(7 downto 0);
-	signal data_tx		:	std_logic_vector(7 downto 0);
-	signal data_rx		:	std_logic_vector(7 downto 0);
-	signal bit_count	:	integer range 0 to 7;
+	signal state 		: 	statetype := sIDLE;
+	signal state_ena	:	std_logic := 'Z';
+	signal scl_high_ena	:	std_logic := 'Z';
+	signal scl_clk		:	std_logic := '0';
+	signal scl_oe		:	std_logic := '0';
+	signal ack_error_i:	std_logic := '0';
+	signal rnw_i		:	std_logic := '0';	
+	signal sda_int		:	std_logic := '0';
+	signal addr_rnw	:	std_logic_vector(7 downto 0) := (others => '0');
+	signal data_tx		:	std_logic_vector(7 downto 0) := (others => '0');
+	signal data_rx		:	std_logic_vector(7 downto 0) := (others => '0');
+	signal bit_count	:	integer range 0 to 7 := 0;
 	
 	begin
-	
-		state_proc: process (clk,areset_n)
+		-- This process triggers the state change
+		state_proc: process (clk,areset_n,ena,state_ena,rnw,bit_count,rnw_i,state)
 		begin
 		case state is			
 			when sSTART =>
@@ -103,17 +103,20 @@ port
 		end process;
 		
 		
-		output_proc: process (state)
+		-- This process modifies variables according to the state value
+		output_proc: process (state,ena,scl_high_ena,rnw,state_ena,data_wr,addr,bit_count,data_tx,addr_rnw)
 		begin
 			case state is 
 				when sIDLE => -- Missing sample data_wr usw
 					busy <= '0';
+					scl_oe <= '0';
 					if ena = '1' then	
 						addr_rnw <= addr & rnw;
 					end if;
 					sda_int <= '1';
 				when sSTART => -- Ok
 					busy <= '1';
+					scl_oe <= '1';
 					sda_int <= '1';
 					if scl_high_ena = '1' then
 						sda_int <= '0';
@@ -121,6 +124,7 @@ port
 					
 				when sADDR => -- Ok
 					busy <= '1';
+					scl_oe <= '1';
 					sda_int <= addr_rnw(bit_count) ;
 					if bit_count = 0 then	
 						bit_count <= 7;
@@ -129,6 +133,7 @@ port
 					end if;
 				when sACK1 => -- Ok
 					busy <= '0';
+					scl_oe <= '1';
 					sda_int <= '1';
 					if scl_high_ena = '1' then		
 						if sda_int = '1' then
@@ -137,6 +142,7 @@ port
 					end if;
 				when sWRITE => -- Ok
 					busy <= '1';
+					scl_oe <= '1';
 					sda_int <= data_tx(bit_count);
 					if bit_count = 0 then	
 						bit_count <= 7;
@@ -145,6 +151,7 @@ port
 					end if;
 				when sREAD =>
 					busy <= '1';
+					scl_oe <= '1';
 					sda_int <= '1';
 					if scl_high_ena = '1' then
 						sda <= data_rx(bit_count);
@@ -156,6 +163,7 @@ port
 					end if;
 				when sACK2 => -- Eventuellement a reprendre
 					sda_int <= '1';
+					scl_oe <= '1';
 					busy <= '0';
 					if ena = '1' and rnw = '0' then	
 						data_tx <= data_wr;
@@ -171,6 +179,7 @@ port
 				end if;
 				when sMACK =>
 					sda_int <= '1';
+					scl_oe <= '1';
 					busy <= '0';
 					if ena = '1' and rnw = '0' then -- restart condition
 						sda_int <= '1';
@@ -182,6 +191,7 @@ port
 					end if;
 				when sSTOP =>
 					busy <= '1';
+					scl_oe <= '1';
 					if scl_high_ena = '1' then	
 						sda_int <= '1';
 					end if;
@@ -191,19 +201,22 @@ port
 		
 		
 		-- This process creates a clock divider used by our bus
-		clk_proc: process (clk)
+		clk_proc: process (clk,state_ena,scl_high_ena,areset_n)
 			variable counter : integer := 0;
-			variable divider : integer := system_clk/bus_clk;
+			variable divider : integer := 10;
 		
 		begin
+			divider := system_clk/bus_clk;
 		-- bus_clk  is the same as i2c_clk
 			if state_ena = '0' and scl_high_ena = '0' then	
 				counter := 0;
 				scl_clk <= '0';
-			
+--			elsif areset_n = '1' then
+--				counter := 0;
+--				scl_clk <= '0';			
 			elsif rising_edge(clk) then
 				state_ena<= '0';
-				counter := counter+1;
+				counter := counter + 1;
 					
 					if counter = ((divider /2 )-1) then
 						scl_clk <= '1';
@@ -213,9 +226,27 @@ port
 						scl_clk <= '0';
 						counter :=0;					
 					end if;	
-		
-		end if;		
+
+			end if;		
 		end process;
 	
+		
+		-- This process controls the SDA and SCL lines
+		sda_scl_proc: process (scl_oe,scl_clk,sda_int)
+		begin
+			-- Set the clock of the I2C bus
+			if scl_oe = '1' then
+				scl <= scl_clk;
+			else
+				scl <= 'Z';
+			end if;
+			-- Set the data line of the I2C bus
+			if sda_int = '1' then
+				sda <= 'Z';
+			else
+				sda <= '0';
+			end if;
+		end process;
+		
 	end architecture top_level;
 	

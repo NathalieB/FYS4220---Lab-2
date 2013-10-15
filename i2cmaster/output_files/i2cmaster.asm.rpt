@@ -1,6 +1,6 @@
 Assembler report for i2cmaster
-Wed Oct 09 15:58:37 2013
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Tue Oct 15 07:32:27 2013
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -10,8 +10,8 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: M:/pc/Desktop/fys4220/i2cmaster/output_files/i2cmaster.sof
-  6. Assembler Device Options: M:/pc/Desktop/fys4220/i2cmaster/output_files/i2cmaster.pof
+  5. Assembler Device Options: C:/Users/Natsu/Documents/GitHub/FYS4220---Lab-2/i2cmaster/output_files/i2cmaster.sof
+  6. Assembler Device Options: C:/Users/Natsu/Documents/GitHub/FYS4220---Lab-2/i2cmaster/output_files/i2cmaster.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Oct 09 15:58:37 2013 ;
+; Assembler Status      ; Successful - Tue Oct 15 07:32:27 2013 ;
 ; Revision Name         ; i2cmaster                             ;
 ; Top-level Entity Name ; i2cmaster                             ;
 ; Family                ; Cyclone II                            ;
@@ -78,53 +78,53 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+------------------------------------------------------------+
-; Assembler Generated Files                                  ;
-+------------------------------------------------------------+
-; File Name                                                  ;
-+------------------------------------------------------------+
-; M:/pc/Desktop/fys4220/i2cmaster/output_files/i2cmaster.sof ;
-; M:/pc/Desktop/fys4220/i2cmaster/output_files/i2cmaster.pof ;
-+------------------------------------------------------------+
-
-
 +--------------------------------------------------------------------------------------+
-; Assembler Device Options: M:/pc/Desktop/fys4220/i2cmaster/output_files/i2cmaster.sof ;
-+----------------+---------------------------------------------------------------------+
-; Option         ; Setting                                                             ;
-+----------------+---------------------------------------------------------------------+
-; Device         ; EP2C70F896C6                                                        ;
-; JTAG usercode  ; 0x00610E95                                                          ;
-; Checksum       ; 0x00610E95                                                          ;
-+----------------+---------------------------------------------------------------------+
-
-
+; Assembler Generated Files                                                            ;
 +--------------------------------------------------------------------------------------+
-; Assembler Device Options: M:/pc/Desktop/fys4220/i2cmaster/output_files/i2cmaster.pof ;
-+--------------------+-----------------------------------------------------------------+
-; Option             ; Setting                                                         ;
-+--------------------+-----------------------------------------------------------------+
-; Device             ; EPCS16                                                          ;
-; JTAG usercode      ; 0x00000000                                                      ;
-; Checksum           ; 0x187E0E24                                                      ;
-; Compression Ratio  ; 3                                                               ;
-+--------------------+-----------------------------------------------------------------+
+; File Name                                                                            ;
++--------------------------------------------------------------------------------------+
+; C:/Users/Natsu/Documents/GitHub/FYS4220---Lab-2/i2cmaster/output_files/i2cmaster.sof ;
+; C:/Users/Natsu/Documents/GitHub/FYS4220---Lab-2/i2cmaster/output_files/i2cmaster.pof ;
++--------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Natsu/Documents/GitHub/FYS4220---Lab-2/i2cmaster/output_files/i2cmaster.sof ;
++----------------+-----------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                       ;
++----------------+-----------------------------------------------------------------------------------------------+
+; Device         ; EP2C70F896C6                                                                                  ;
+; JTAG usercode  ; 0x00618120                                                                                    ;
+; Checksum       ; 0x00618120                                                                                    ;
++----------------+-----------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Natsu/Documents/GitHub/FYS4220---Lab-2/i2cmaster/output_files/i2cmaster.pof ;
++--------------------+-------------------------------------------------------------------------------------------+
+; Option             ; Setting                                                                                   ;
++--------------------+-------------------------------------------------------------------------------------------+
+; Device             ; EPCS16                                                                                    ;
+; JTAG usercode      ; 0x00000000                                                                                ;
+; Checksum           ; 0x187C3540                                                                                ;
+; Compression Ratio  ; 3                                                                                         ;
++--------------------+-------------------------------------------------------------------------------------------+
 
 
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit Assembler
+Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Oct 09 15:58:29 2013
+    Info: Processing started: Tue Oct 15 07:32:20 2013
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off i2cmaster -c i2cmaster
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
-Info: Quartus II 32-bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 327 megabytes
-    Info: Processing ended: Wed Oct 09 15:58:37 2013
-    Info: Elapsed time: 00:00:08
+Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 421 megabytes
+    Info: Processing ended: Tue Oct 15 07:32:27 2013
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:06
 
 

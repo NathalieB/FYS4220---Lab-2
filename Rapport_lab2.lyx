@@ -122,7 +122,7 @@ It is a protocal based on the system of ACK/NACK ( Acknowledge or not ).
 \end_layout
 
 \begin_layout Section
-Writing of the VHD code
+Writing of the VHD file
 \end_layout
 
 \begin_layout Standard
@@ -133,6 +133,151 @@ The main point was here to translate the finite state machine into code
 \begin_layout Standard
 To do so, we had to use signals and also generics.
  
+\end_layout
+
+\begin_layout Subsection
+Finite State Machine
+\end_layout
+
+\begin_layout Standard
+The first step was to implement the VDHL code for the Finite State Machine.
+ It basically means that we began by writing a process to trigger the change
+ of our State variable.
+ This variable can take the following state: Start (to launch the communication)
+, Ack1, Ack2, Idle, Write, Read, Addr, Mack and Stop.
+ Each state corresponds to a step of the I2C communication: we begin by
+ launching the start condition, then determines which are the registers
+ we want to talk to, wait for an acknoledgement of the slave, and if the
+ communication went well, we send a Master Acknowledgement.
+ To restart the communication, we send a non acknowledgement, and start
+ again.
+\end_layout
+
+\begin_layout Standard
+Then, we added to the code a process determining the influence of the state
+ variable on the different variables of our project.
+ For example, we had to write how the Start state implies that the 
+\begin_inset Quotes eld
+\end_inset
+
+Busy
+\begin_inset Quotes erd
+\end_inset
+
+ variable is high, or how the Iddle state changes it to low.
+\end_layout
+
+\begin_layout Subsection
+Clock process
+\end_layout
+
+\begin_layout Standard
+We know that to see clean signals, we had to change the frequency of the
+ clock.
+ Thus, we implemented a process called 
+\begin_inset Quotes eld
+\end_inset
+
+clck_process
+\begin_inset Quotes erd
+\end_inset
+
+, used to divide the period of the clock.
+ this is done in two big steps: first of all, we check if the reset button
+ was or was not hit.
+ If it indeed was hit, we reset everything.
+ Else, we just check the state of the clock, and divide it thanks to a counter.
+\end_layout
+
+\begin_layout Subsection
+And finally, changing SDA and SCL
+\end_layout
+
+\begin_layout Standard
+As we said it, SDA and SCL are the two wires used by the I2C protocol.
+ SDA carries data, and SCL sends the Master clock to its slaves.
+ 
+\end_layout
+
+\begin_layout Standard
+We determine a new clock frequency thanks to our clock process, and this
+ is the one we assign to the SCL.
+ The frequency is now of 62 500Hz, instead of 50MHz.
+\end_layout
+
+\begin_layout Standard
+For the SDA, we changed it according to the internal variable sda_int, which
+ depends on the current state, as expected.
+\end_layout
+
+\begin_layout Section
+Writing of the Test Bench
+\end_layout
+
+\begin_layout Standard
+The testbench was here a big challenge, since this is how we debug the main
+ code.
+ With this kind of program, illustrating Finite State Machine, we have to
+ be aware that a inattention mistake can easily happen.
+ Which is why we have to write our testbench very carefully.
+\end_layout
+
+\begin_layout Standard
+The concept of a test bench here is to simulate every inputs that should
+ be given by the board components.
+ Thus, we have to write a process even for the clock, that should stick
+ as closely as possible to was is supposed to happen.
+\end_layout
+
+\begin_layout Standard
+We definitely had a problem somewhere, that we weren't able to fix due to
+ 
+\series bold
+....
+ Tu as des idées de raisons ? Là je sèche ~
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename chrono_pourri.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Chronogram testing our program
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusion
 \end_layout
 
 \end_body

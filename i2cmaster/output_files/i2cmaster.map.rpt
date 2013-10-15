@@ -1,6 +1,6 @@
 Analysis & Synthesis report for i2cmaster
-Wed Oct 09 15:58:02 2013
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Tue Oct 15 07:31:51 2013
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -44,15 +44,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Oct 09 15:58:02 2013           ;
-; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Analysis & Synthesis Status        ; Successful - Tue Oct 15 07:31:51 2013           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; i2cmaster                                       ;
 ; Top-level Entity Name              ; i2cmaster                                       ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 75                                              ;
-;     Total combinational functions  ; 75                                              ;
-;     Dedicated logic registers      ; 33                                              ;
-; Total registers                    ; 33                                              ;
+; Total logic elements               ; 112                                             ;
+;     Total combinational functions  ; 112                                             ;
+;     Dedicated logic registers      ; 34                                              ;
+; Total registers                    ; 34                                              ;
 ; Total pins                         ; 31                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -157,13 +157,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                 ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                          ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
-; vhd_src/i2cmaster.vhd            ; yes             ; User VHDL File  ; M:/pc/Desktop/fys4220/i2cmaster/vhd_src/i2cmaster.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                           ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                    ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
+; vhd_src/i2cmaster.vhd            ; yes             ; User VHDL File  ; C:/Users/Natsu/Documents/GitHub/FYS4220---Lab-2/i2cmaster/vhd_src/i2cmaster.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -171,28 +171,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 75    ;
+; Estimated Total logic elements              ; 112   ;
 ;                                             ;       ;
-; Total combinational functions               ; 75    ;
+; Total combinational functions               ; 112   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 25    ;
-;     -- 3 input functions                    ; 14    ;
-;     -- <=2 input functions                  ; 36    ;
+;     -- 4 input functions                    ; 40    ;
+;     -- 3 input functions                    ; 35    ;
+;     -- <=2 input functions                  ; 37    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 44    ;
+;     -- normal mode                          ; 81    ;
 ;     -- arithmetic mode                      ; 31    ;
 ;                                             ;       ;
-; Total registers                             ; 33    ;
-;     -- Dedicated logic registers            ; 33    ;
+; Total registers                             ; 34    ;
+;     -- Dedicated logic registers            ; 34    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 31    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 33    ;
-; Total fan-out                               ; 280   ;
-; Average fan-out                             ; 2.01  ;
+; Maximum fan-out                             ; 34    ;
+; Total fan-out                               ; 410   ;
+; Average fan-out                             ; 2.32  ;
 +---------------------------------------------+-------+
 
 
@@ -201,7 +201,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |i2cmaster                 ; 75 (75)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 31   ; 0            ; |i2cmaster          ; work         ;
+; |i2cmaster                 ; 112 (112)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 31   ; 0            ; |i2cmaster          ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -211,19 +211,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
-; state.sACK1_777                                     ; Selector8           ; yes                    ;
-; state.sACK2_753                                     ; Selector8           ; yes                    ;
-; state.sIDLE_729                                     ; Selector8           ; yes                    ;
-; state.sMACK_633                                     ; Selector8           ; yes                    ;
-; state.sADDR_657                                     ; Selector8           ; yes                    ;
-; state.sSTOP_609                                     ; Selector8           ; yes                    ;
-; bit_count[2]                                        ; WideOr1             ; yes                    ;
-; bit_count[1]                                        ; WideOr1             ; yes                    ;
-; bit_count[0]                                        ; WideOr1             ; yes                    ;
-; state.sREAD_681                                     ; Selector8           ; yes                    ;
-; state.sWRITE_705                                    ; Selector8           ; yes                    ;
-; state.sSTART_801                                    ; Selector8           ; yes                    ;
-; Number of user-specified and inferred latches = 12  ;                     ;                        ;
+; state.sMACK_865                                     ; Selector24          ; yes                    ;
+; state.sIDLE_965                                     ; Selector24          ; yes                    ;
+; state.sACK2_990                                     ; Selector24          ; yes                    ;
+; state.sACK1_1015                                    ; Selector24          ; yes                    ;
+; state.sREAD_915                                     ; Selector24          ; yes                    ;
+; state.sSTOP_840                                     ; Selector24          ; yes                    ;
+; bit_count[0]                                        ; WideOr3             ; yes                    ;
+; bit_count[1]                                        ; WideOr3             ; yes                    ;
+; bit_count[2]                                        ; WideOr3             ; yes                    ;
+; state.sWRITE_940                                    ; Selector24          ; yes                    ;
+; state.sADDR_890                                     ; Selector24          ; yes                    ;
+; state.sSTART_1040                                   ; Selector24          ; yes                    ;
+; sda_int                                             ; state.sSTOP_840     ; yes                    ;
+; data_tx[2]                                          ; data_tx[3]          ; yes                    ;
+; data_tx[1]                                          ; data_tx[3]          ; yes                    ;
+; data_tx[0]                                          ; data_tx[3]          ; yes                    ;
+; data_tx[3]                                          ; data_tx[3]          ; yes                    ;
+; data_tx[6]                                          ; data_tx[3]          ; yes                    ;
+; data_tx[5]                                          ; data_tx[3]          ; yes                    ;
+; data_tx[4]                                          ; data_tx[3]          ; yes                    ;
+; data_tx[7]                                          ; data_tx[3]          ; yes                    ;
+; addr_rnw[1]                                         ; Selector15          ; yes                    ;
+; addr_rnw[2]                                         ; Selector15          ; yes                    ;
+; addr_rnw[0]                                         ; Selector15          ; yes                    ;
+; addr_rnw[3]                                         ; Selector15          ; yes                    ;
+; addr_rnw[6]                                         ; Selector15          ; yes                    ;
+; addr_rnw[5]                                         ; Selector15          ; yes                    ;
+; addr_rnw[4]                                         ; Selector15          ; yes                    ;
+; addr_rnw[7]                                         ; Selector15          ; yes                    ;
+; Number of user-specified and inferred latches = 29  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -233,7 +250,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 33    ;
+; Total registers                              ; 34    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -248,7 +265,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |i2cmaster|\clk_proc:counter[18] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |i2cmaster|\clk_proc:counter[27] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 
 
@@ -276,9 +293,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit Analysis & Synthesis
+Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Oct 09 15:57:55 2013
+    Info: Processing started: Tue Oct 15 07:31:47 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off i2cmaster -c i2cmaster
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file vhd_src/td_i2cmaster.vhd
@@ -289,85 +306,34 @@ Info (12021): Found 2 design units, including 1 entities, in source file vhd_src
     Info (12023): Found entity 1: i2cmaster
 Info (12127): Elaborating entity "i2cmaster" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at i2cmaster.vhd(23): used implicit default value for signal "data_rd" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at i2cmaster.vhd(39): used implicit default value for signal "scl_high_ena" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at i2cmaster.vhd(40): object "scl_clk" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at i2cmaster.vhd(43): used implicit default value for signal "rnw_i" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at i2cmaster.vhd(47): used implicit default value for signal "data_rx" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(54): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(56): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(60): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(60): signal "bit_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(64): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(64): signal "rnw_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(66): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(66): signal "rnw_i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(70): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(70): signal "bit_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(74): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(74): signal "ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(76): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(76): signal "ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(76): signal "rnw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(78): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(78): signal "ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(78): signal "rnw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(83): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(83): signal "bit_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(87): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(87): signal "ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(89): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(89): signal "ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(89): signal "rnw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(91): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(91): signal "ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(91): signal "rnw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(95): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(99): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(99): signal "ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10540): VHDL Signal Declaration warning at i2cmaster.vhd(39): used explicit default value for signal "scl_high_ena" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at i2cmaster.vhd(43): used explicit default value for signal "rnw_i" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at i2cmaster.vhd(47): used explicit default value for signal "data_rx" because signal was never assigned a value
 Warning (10631): VHDL Process Statement warning at i2cmaster.vhd(52): inferring latch(es) for signal or variable "state", which holds its previous value in one or more paths through the process
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(111): signal "ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(112): signal "addr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(112): signal "rnw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(118): signal "scl_high_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(124): signal "addr_rnw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(124): signal "bit_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(125): signal "bit_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(128): signal "bit_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(133): signal "scl_high_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(140): signal "data_tx" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(140): signal "bit_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(141): signal "bit_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(144): signal "bit_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(149): signal "scl_high_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(152): signal "bit_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(155): signal "bit_count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(160): signal "ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(160): signal "rnw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(161): signal "data_wr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(162): signal "addr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(162): signal "rnw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(163): signal "ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(163): signal "rnw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(164): signal "addr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(164): signal "rnw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(165): signal "data_wr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(167): signal "scl_high_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(175): signal "ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(175): signal "rnw" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(177): signal "scl_high_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(180): signal "ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(180): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(185): signal "scl_high_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at i2cmaster.vhd(106): inferring latch(es) for signal or variable "addr_rnw", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at i2cmaster.vhd(106): inferring latch(es) for signal or variable "sda_int", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at i2cmaster.vhd(106): inferring latch(es) for signal or variable "bit_count", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at i2cmaster.vhd(106): inferring latch(es) for signal or variable "data_tx", which holds its previous value in one or more paths through the process
-Warning (10542): VHDL Variable Declaration warning at i2cmaster.vhd(196): used initial value expression for variable "divider" because variable was never assigned a value
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(200): signal "state_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at i2cmaster.vhd(200): signal "scl_high_ena" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (10041): Inferred latch for "bit_count[0]" at i2cmaster.vhd(106)
-Info (10041): Inferred latch for "bit_count[1]" at i2cmaster.vhd(106)
-Info (10041): Inferred latch for "bit_count[2]" at i2cmaster.vhd(106)
+Warning (10631): VHDL Process Statement warning at i2cmaster.vhd(107): inferring latch(es) for signal or variable "addr_rnw", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at i2cmaster.vhd(107): inferring latch(es) for signal or variable "sda_int", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at i2cmaster.vhd(107): inferring latch(es) for signal or variable "bit_count", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at i2cmaster.vhd(107): inferring latch(es) for signal or variable "data_tx", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "data_tx[0]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "data_tx[1]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "data_tx[2]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "data_tx[3]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "data_tx[4]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "data_tx[5]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "data_tx[6]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "data_tx[7]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "bit_count[0]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "bit_count[1]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "bit_count[2]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "sda_int" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "addr_rnw[0]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "addr_rnw[1]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "addr_rnw[2]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "addr_rnw[3]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "addr_rnw[4]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "addr_rnw[5]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "addr_rnw[6]" at i2cmaster.vhd(107)
+Info (10041): Inferred latch for "addr_rnw[7]" at i2cmaster.vhd(107)
 Info (10041): Inferred latch for "state.sSTOP" at i2cmaster.vhd(52)
 Info (10041): Inferred latch for "state.sMACK" at i2cmaster.vhd(52)
 Info (10041): Inferred latch for "state.sADDR" at i2cmaster.vhd(52)
@@ -379,26 +345,24 @@ Info (10041): Inferred latch for "state.sACK1" at i2cmaster.vhd(52)
 Info (10041): Inferred latch for "state.sSTART" at i2cmaster.vhd(52)
 Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "ack_error" has no driver
-    Warning (13040): Bidir "sda" has no driver
-    Warning (13040): Bidir "scl" has no driver
-Warning (13012): Latch state.sACK1_777 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sADDR_657
-Warning (13012): Latch state.sACK2_753 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sWRITE_705
-Warning (13012): Latch state.sIDLE_729 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sSTOP_609
-Warning (13012): Latch state.sMACK_633 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sREAD_681
-Warning (13012): Latch state.sADDR_657 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sSTART_801
-Warning (13012): Latch state.sSTOP_609 has unsafe behavior
+Warning (13012): Latch state.sMACK_865 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sREAD_915
+Warning (13012): Latch state.sIDLE_965 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sSTOP_840
+Warning (13012): Latch state.sACK2_990 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sWRITE_940
+Warning (13012): Latch state.sACK1_1015 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sADDR_890
+Warning (13012): Latch state.sREAD_915 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sMACK_865
+Warning (13012): Latch state.sSTOP_840 has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal state_ena
-Warning (13012): Latch state.sREAD_681 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sMACK_633
-Warning (13012): Latch state.sWRITE_705 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sACK2_753
-Warning (13012): Latch state.sSTART_801 has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sIDLE_729
+Warning (13012): Latch state.sWRITE_940 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sACK1_1015
+Warning (13012): Latch state.sADDR_890 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sSTART_1040
+Warning (13012): Latch state.sSTART_1040 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal state.sIDLE_965
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "data_rd[0]" is stuck at GND
     Warning (13410): Pin "data_rd[1]" is stuck at GND
@@ -410,32 +374,17 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "data_rd[7]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 16 input pin(s) that do not drive logic
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "areset_n"
-    Warning (15610): No output dependent on input pin "addr[0]"
-    Warning (15610): No output dependent on input pin "addr[1]"
-    Warning (15610): No output dependent on input pin "addr[2]"
-    Warning (15610): No output dependent on input pin "addr[3]"
-    Warning (15610): No output dependent on input pin "addr[4]"
-    Warning (15610): No output dependent on input pin "addr[5]"
-    Warning (15610): No output dependent on input pin "addr[6]"
-    Warning (15610): No output dependent on input pin "data_wr[0]"
-    Warning (15610): No output dependent on input pin "data_wr[1]"
-    Warning (15610): No output dependent on input pin "data_wr[2]"
-    Warning (15610): No output dependent on input pin "data_wr[3]"
-    Warning (15610): No output dependent on input pin "data_wr[4]"
-    Warning (15610): No output dependent on input pin "data_wr[5]"
-    Warning (15610): No output dependent on input pin "data_wr[6]"
-    Warning (15610): No output dependent on input pin "data_wr[7]"
-Info (21057): Implemented 133 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 170 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 19 input pins
     Info (21059): Implemented 9 output pins
     Info (21060): Implemented 3 bidirectional pins
-    Info (21061): Implemented 102 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 126 warnings
-    Info: Peak virtual memory: 348 megabytes
-    Info: Processing ended: Wed Oct 09 15:58:03 2013
-    Info: Elapsed time: 00:00:08
+    Info (21061): Implemented 139 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 41 warnings
+    Info: Peak virtual memory: 484 megabytes
+    Info: Processing ended: Tue Oct 15 07:31:51 2013
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:03
 
 

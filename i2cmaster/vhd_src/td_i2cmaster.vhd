@@ -24,17 +24,17 @@ Component i2cmaster
 	);
 end component;
 
-		signal clk 			 : 	std_logic;
-		signal areset_n	 :  	std_logic;
-		signal ena			 :  	std_logic;
-		signal addr	 		 :  	std_logic_vector(6 downto 0);
-		signal rnw		 	 : 	std_logic;
-		signal data_wr	 	 : 	std_logic_vector(7 downto 0);
-		signal data_rd	 	 : 	std_logic_vector(7 downto 0);
-		signal busy		 	 : 	std_logic;
-		signal ack_error 	 : 	std_logic;
-		signal sda 	 		 : 	std_logic;
-		signal scl			 : 	std_logic;
+		signal clk 			 : 	std_logic := '0';
+		signal areset_n	 :  	std_logic := '0';
+		signal ena			 :  	std_logic := '1';
+		signal addr	 		 :  	std_logic_vector(6 downto 0) := (others => '0');
+		signal rnw		 	 : 	std_logic := '0';
+		signal data_wr	 	 : 	std_logic_vector(7 downto 0) := (others => '0');
+		signal data_rd	 	 : 	std_logic_vector(7 downto 0) := (others => '0');
+		signal busy		 	 : 	std_logic := '0';
+		signal ack_error 	 : 	std_logic := '0';
+		signal sda 	 		 : 	std_logic := '0';
+		signal scl			 : 	std_logic := '0';
 
 begin
 
@@ -53,35 +53,40 @@ begin
 			scl => scl
 	);
 
+	areset_n <= '1';
+	areset_n <= '0';
+	
+	clock_process : process
+	begin
+		clk <= '0';
+		wait for 20 ns;
+		clk <= '1';
+		wait for 20 ns;
+	end process;
 	
 	-- process used to fix the temperature resolution
 	resolution_process : process
 	begin
 		addr <= "1001000";
 		rnw <= '0';
-		wait for 2500 ns;
+		wait for 100 ns;
 		addr <= "0000000";
 		rnw <= '1';
-		wait for 2500 ns;
+		wait for 100 ns;
 		addr <= "0110000";
 		rnw <= '0';
-		wait for 2500 ns;
+		wait for 100 ns;
 		
-	end process;
-	
-	-- process used to fixe the temperature register address
-	address_process : process
-	begin
+	-- fixe the temperature register address
 		addr <= "1001000";
 		rnw <= '1';
-		wait for 2500 ns;
-	end process;
+		wait for 100 ns;
 	
-	-- process used to read the value of the temperature register
-	read_process : process
-	begin
+	--read the value of the temperature register
 		addr <= "1001000";
 		rnw <= '1'; -- 1 to read
-		wait for 2500 ns;
+		wait for 100 ns;
+			
 	end process;
+	
 end architecture testbench;
